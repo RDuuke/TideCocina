@@ -15,6 +15,7 @@
 	<meta charset="UTF-8">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" href="css/ed-grid.css">
 
 	<title>Tide</title>
 
@@ -32,15 +33,94 @@
 
 	<!-- <link rel="stylesheet" href="css/lib/bootstrap.min.css"> -->
 
-	<link rel="stylesheet" href="css/style.css?<?php echo time();?>">
+	<link rel="stylesheet" href="css/style.css">
 
 	<link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="js/jquery.mCustomScrollbar.css">
 
 	<link rel="shortcut icon" href="tide.ico">
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
-
+<style>
+	.campo {
+    font-family: 'AutoradiographicRg-Regular';
+    padding: 9px 6px;
+    width: 100%;
+    border: 0;
+    border-radius: 7px;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+}
+.color-fuente{
+	color: #00937B;
+	font-family: 'Pacifico', cursive;
+}
+.linea {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.blanco {
+    color: #000;
+    font-weight: bold !important;
+    font-size: 20px;
+}
+.fuente{
+	font-family: 'HelveticaNeue-Thin' !important;
+}
+.fondo {
+    background-image: url(images/TIDE_COCINA-DE-SUEÑOS_Q.jpg);
+    background-size: contain;
+    margin-top: -54px;
+}
+.tam_check{
+	font-size: 14px;
+}
+.color_titulo_registro{
+	color: #00937B;
+	font-family: 'Pacifico', cursive;
+}
+.error {
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 5000000000;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.ventana {
+    max-width: 400px;
+    height: auto;
+    margin: 8% auto;
+    position: relative;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0px 0px 17px #ccc;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 14px 40px;
+    border-radius: 10px;
+}
+.salir {
+    position: absolute;
+    color: #00937B;
+    font-size: 18px;
+    border: 1px solid;
+    border-radius: 5px;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    padding: 1px 7px;
+    font-weight: bolder;
+}
+#mensajes{
+	text-align: justify;
+	margin: 10px auto;
+}
+</style>
 
 	<script>
 
@@ -132,51 +212,189 @@
 	</div>
 
 	<div class="section section-top">
-
-		<div class="init">
-
-			<img class="estatua" src="images/imagenes_tide/fondo_2.png">
-
+		<div class="init fondo">
+			<!-- <img class="estatua" src="images/imagenes_tide/fondo_2.png"> -->
 			<div class="container">
-
 				<div class="row">
-
-					<div class="col-sm-7 col-md-7 pull-right init-box--right">
-
-						<figure class="center-block init-logo">
-
-							<img class="img-responsive" src="images/imagenes_tide/my_tide.png" alt="" />
-
-						</figure>
-
-						<figure>
-
-							<img class="img-responsive" src="images/imagenes_tide/lleva_nuevayork.png" alt="" />
-
-						</figure>
-
-						<figure style="margin-top:2%; margin-bottom: 8%;">
-							<img class="img-responsive" src="images/winner.png" alt="" />
-						</figure>
-
-						<!-- login -->
-						<!-- 								<div class="col-sm-9 col-md-6 pull-right login">
-
-                                                            <p>Ingresa tus datos</p>
-
-                                                            <a id="registrarse" href="#" class="btn btn-primary btn-block u-btn">Regístrate</a>
-
-                                                            <p>¿Ya estás registrado?</p>
-
-                                                            <a id="ingresa" href="#" class="btn btn-primary btn-block u-btn">Ingresa tu código</a>
-
-                                                        </div> -->
-
+					<div class="col-sm-12 col-md-12 pull-right init-box--right">
+						<div class="ed-container total fondo-registro">
+						<div class="j-separator-20"></div>
+						<div class="ed-container p-relativa">
+							<div class="ed-item base-50 movil-50 tablet-15 web-15">
+								<img src="images/logo_tide.png" alt="">
+							</div>
+							<div class="ed-item base-50 movil-50 tablet-15 web-15">
+								<img src="images/casade_logo.png" alt="">
+							</div>
+							<div class="ed-item base-70 movil-70 tablet-50 web-50 text-center">
+								<h1 class="color_titulo_registro">Ingresa tus datos</h1>
+							</div>
+							<div class="ed-item base-30 movil-30 tablet-20 web-20 text-center"> 
+								<span class="blanco fuente rigth p-apsoluta padding">* obligatorios</span>
+							</div>
+							<div class="j-separator-20"></div>
+							<div class="j-separator-20"></div>
+							<form class="total" id="formulario_registro">
+								<div class="ed-container total">
+									<div class="ed-item base-100 movil-100 tablet-25 web-25">
+										<label class="fuente blanco tam" for="">Número de documento*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-25 web-25">
+										<input  autocomplete="off" type="text" class="campo fuente" id="cedula">
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-25 web-25">
+										<label class="fuente blanco tam" for="">Tipo de documento*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-25 web-25">
+										<select name=""class="campo fuente" id="t_doc">
+											<option value="">Seleccione un documento</option>
+											<option value="C.C">CC</option>
+											<option value="C.E">N° Pasaporte</option>
+										</select>
+									</div>
+									<div class="j-separator-20"></div>
+									<div class="ed-item base-100 movil-100 tablet-10 web-10">
+										<label class="fuente blanco tam" for="">Nombres*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-40 web-40">
+										<input  autocomplete="off" type="text"class="campo fuente" id="nombre">
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-10 web-10">
+										<label class="fuente blanco tam" for="">Apellidos*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-40 web-40">
+										<input  autocomplete="off" type="text"class="campo fuente" id="apellido">
+									</div>
+									<div class="j-separator-20"></div>
+									<div class="ed-item base-100 movil-100 tablet-20 web-20">
+										<label class="fuente blanco tam" for="">Fecha de nacimiento*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-15 web-15">
+										<input  autocomplete="off" type="number"class="campo fuente" placeholder="Día" id="dia">
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-15 web-15">
+										<select name=""class="campo fuente" id="mes">
+											<option value="">Mes</option>	
+											<option value="01">Enero</option>
+											<option value="02">Febrero</option>
+											<option value="03">Marzo</option>
+											<option value="04">Abril</option>
+											<option value="05">Mayo</option>
+											<option value="06">Junio</option>
+											<option value="07">Julio</option>
+											<option value="08">Agosto</option>
+											<option value="09">Septiembre</option>
+											<option value="10">Octubre</option>
+											<option value="11">Noviembre</option>
+											<option value="12">Diciembre</option>
+										</select>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-15 web-15">
+										<input  autocomplete="off" type="number"class="campo fuente" id="anno"placeholder="año">
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-15 web-15">
+										<label class="fuente blanco tam" for="">Genero*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-20 web-20">
+										<select name=""class="campo fuente" id="genero">
+											<option value="">Genero</option>
+											<option value="F">Femenino</option>
+											<option value="M">Masculino</option>	
+										</select>
+									</div>
+									<div class="j-separator-20"></div>
+									<div class="ed-item base-100 movil-100 tablet-10 web-10">
+										<label class="fuente blanco tam" for="">Teléfono*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-35 web-35">
+										<input  autocomplete="off" type="number"class="campo fuente" id="telefono">
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-20 web-20">
+										<label class="fuente blanco tam" for="">Correo electrónico*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-35 web-35">
+										<input  autocomplete="off" type="email"class="campo fuente" id="email">
+									</div>
+									<div class="j-separator-20"></div>
+									<div class="ed-item base-100 movil-100 tablet-20 web-20">
+										<label class="fuente blanco tam" for="">Departamento*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-20 web-20" >
+										<select name=""class="campo fuente" id="departament" ></select>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-20 web-20">
+										<label class="fuente blanco tam" for="">Ciudad*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-20 web-20">
+										<select name=""class="campo fuente" id="city"></select>
+									</div>
+									<div class="j-separator-20"></div>
+									<div class="ed-item base-100 movil-100 tablet-50 web-50">
+										<label class="fuente blanco tam" for="">¿Dónde realizaste la compra?*</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-50 web-50">
+										<select name=""class="campo fuente" id="ciudades">
+											<option value="EXITO" >EXITO</option>
+											<option value="CARULLA" >CARULLA</option>	
+											<option value="JUMBO" >JUMBO</option>	
+											<option value="CONSUMO" >CONSUMO</option>
+											<option value="EURO">EURO</option>
+											<option value="LA 14">LA 14</option>
+											<option value="OLIMPICALIREM">OLIMPICALIREM</option>
+										</select>
+									</div>
+									<div class="j-separator-10"></div>
+									<div class="ed-item base-100 movil-100 tablet-100 web-100">
+										<label class="fuente blanco tam" for="">Producto(s) que compraste* (puedes elegir múltiples opciones)</label>
+									</div>
+								</div>
+									<div class="j-separator-10"></div>
+									<div class="ed-container my-clase"> 
+										<div class="ed-item base-100 movil-100 tablet-20 web-20">
+											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Original</label>
+											<div class="j-separator-10"></div>
+											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Original HE</label>
+										</div>
+										<div class="ed-item base-100 movil-100 tablet-20 web-20">
+											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Sport</label>
+											<div class="j-separator-10"></div>
+											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide con Downy</label>
+										</div>
+										<div class="ed-item base-100 movil-100 tablet-20 web-20">
+											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Bleach</label>
+											<div class="j-separator-10"></div>
+											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Free & Gentle</label>
+										</div>
+										<div class="ed-item base-100 movil-100 tablet-20 web-20">
+											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide To Go</label>
+											<div class="j-separator-10"></div>
+											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Febreze Spring & Renewal</label>
+										</div>
+										<div class="ed-item base-100 movil-100 tablet-20 web-20">
+											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Stain Release</label>
+											<div class="j-separator-10"></div>
+											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Pods</label>
+										</div>
+									</div>
+								<div class="ed-container">
+									<div class="j-separator-40"></div>
+									<hr class="blanco linea">
+									<div class="j-separator-10"></div>
+									<div class="ed-item base-100 movil-100 tablet-70 web-70">
+										<input  class="check fuente blanco tam" id="terminos" type="checkbox"><label class="fuente blanco tam" for="">Acepta los términos y condiciones de la actividad</label><br>
+										<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam" for="">Acepta la política de tratamiento de datos personales de Prebel</label>
+									</div>
+									<div class="ed-item base-100 movil-100 tablet-30 web-30">
+										<button class=" btn btn-success boton mayuscula"id="enviaform">Continuar</button>
+									</div>
+									<div class="j-separator-40"></div>
+								</div>
+							</form>
+						</div>
 					</div>
-
 				</div>
-
 			</div>
+		</div>
 
 			<div class="init-bottom">
 
@@ -1658,10 +1876,26 @@
 			</a>
 
 		</span>
+		<!-- PopUp -->
+		<div class="error">
+			<div class="ventana">
+				<div class="j-separator-40"></div>
+				<span class="salir x">X</span>
+				<h1 class="total text-center color-fuente ">! Tide te Dice ¡</h1>
+				<div class="j-separator-10"></div>
+				<articel id="mensajes"></articel>
+				<div class="j-separator-40"></div>
+				<div class="text-center"> 
+					<button class="btn btn-success x">Aceptar</button>
+				</div>
+				<div class="j-separator-40"></div>
+			</div>
+		</div>
+</body>
 
 <!-- ======= JS ======= -->
 
-<script src="js/lib/jquery.min.js?<?php echo time();?>"></script>
+<script src="js/lib/jquery.min.js"></script>
 
 <script src="js/lib/jquery.validate.js"></script>
 
@@ -1671,13 +1905,15 @@
 
 <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
 
-<script src="js/datos.js?<?php echo time();?>"></script>
+<script src="js/datos.js"></script>
 
-<script src="js/funciones.js?<?php echo time();?>"></script>
+<script src="js/funciones.js"></script>
 
-<script src="js/script.js?<?php echo time();?>"></script>
+<script src="js/script.js"></script>
 
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/main.js"></script>
 
 <script type="text/javascript">
 
@@ -1697,6 +1933,5 @@
 
 </script>
 
-</body>
 
 </html>
