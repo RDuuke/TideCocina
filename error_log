@@ -1,0 +1,7 @@
+[09-Oct-2015 15:22:49 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'kubbox2_prebel'@'localhost' (using password: YES) in /home/kubbox2/public_html/site/clientes/PrevelNavidad/datos.php on line 6
+[09-Oct-2015 15:22:49 UTC] PHP Warning:  mysqli_select_db() expects parameter 1 to be mysqli, boolean given in /home/kubbox2/public_html/site/clientes/PrevelNavidad/datos.php on line 7
+[09-Oct-2015 22:21:33 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/kubbox2/public_html/site/clientes/PrevelNavidad/datos.php on line 6
+[09-Oct-2015 22:21:33 UTC] PHP Warning:  mysqli_select_db() expects parameter 1 to be mysqli, boolean given in /home/kubbox2/public_html/site/clientes/PrevelNavidad/datos.php on line 7
+[09-Oct-2015 22:21:48 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/kubbox2/public_html/site/clientes/PrevelNavidad/datos.php on line 6
+[09-Oct-2015 22:21:48 UTC] PHP Warning:  mysqli_select_db() expects parameter 1 to be mysqli, boolean given in /home/kubbox2/public_html/site/clientes/PrevelNavidad/datos.php on line 7
+[09-Oct-2015 22:24:55 UTC] PHP Fatal error:  Call to undefined function mysqli_fetch_all() in /home/kubbox2/public_html/site/clientes/PrevelNavidad/datos.php on line 82

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select name="departament" id="departament">
+    <option value="" disabled>Seleccione ciudad</option>
+</select>
+<select name="city" id="city">
+</select>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script>
+    $(function () {
+        Departament();
+        $('#departament').change(function(){
+            var id = $(this).val();
+            City(id);
+        });
+    })
+    function Departament(){
+        var departament = $('#departament');
+        console.log('inicio');
+        $.ajax({
+            method: 'GET',
+            url: 'http://localhost:8080/src/App.php?f=DataForm/getDepartament'
+        }).done(function (response) {
+            console.log(response);
+           for(var i = 0; i < response.length; i++){
+               departament.append('<option value="'+ response[i].departamento_id +'">'+ response[i].nombre +'</option>');
+           }
+        });
+    }
+    function City($id) {
+        var city = $('#city');
+        $.ajax({
+            method: 'GET',
+            data: {id: $id},
+            url: 'http://localhost:8080/src/App.php?f=DataForm/getCity'
+        }).done(function (response) {
+            console.log(response);
+            city.html('');
+            for(var i=0; i < response.length; i++){
+                city.append('<option value="'+ response[i].ciudad_id +'">'+ response[i].nombre +'</option>')
+            }
+        })
+    }
+</script>
+</body>
+</html>
