@@ -8,6 +8,7 @@ class UserCook extends Model
 {
     protected $table = 'cocina_usuario';
     protected $conexion;
+    
     public function Create($usid, $nameCocina){
 
         $sth = $this->conexion->prepare("INSERT INTO $this->table (user_id, nombre_cocina) VALUES (:user_id, :nombre_cocina)");

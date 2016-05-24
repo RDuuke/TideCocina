@@ -28,19 +28,19 @@ class CodigoController
                 if ($this->usercode->Create($user->user_id, $this->code->getIdCodigo())) {
                     $this->code->updateStatus();
                     header('Content-type: application/json; charset=utf-8');
-                    echo json_encode(['message' => 'Código registrado correctamente']);
+                    echo json_encode(array('message' => 'Código registrado correctamente'));
                     return true;
                 }
                 header('Content-type: application/json; charset=utf-8');
-                echo json_encode(['message' => 'Error al registrar el código']);
+                echo json_encode(array('message' => 'Error al registrar el código'));
                 return false;
             }
             header('Content-type: application/json; charset=utf-8');
-            echo json_encode(['message' => 'Error al registrar el código']);
+            echo json_encode(array('message' => 'Error al registrar el código'));
             return false;
         }
         header('Content-type: application/json; charset=utf-8');
-        echo json_encode(['message' => 'Error al registrar el código']);
+        echo json_encode(array('message' => 'Error al registrar el código'));
         return false;
     }
 

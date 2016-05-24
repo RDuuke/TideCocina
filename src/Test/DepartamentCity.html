@@ -24,7 +24,7 @@
         console.log('inicio');
         $.ajax({
             method: 'GET',
-            url: 'http://localhost:8080/src/App.php?f=DataForm/getDepartament'
+            url: 'http://localhost:80/src/App.php?f=DataForm/getDepartament'
         }).done(function (response) {
             console.log(response);
            for(var i = 0; i < response.length; i++){
@@ -37,7 +37,7 @@
         $.ajax({
             method: 'GET',
             data: {id: $id},
-            url: 'http://localhost:8080/src/App.php?f=DataForm/getCity'
+            url: 'http://localhost:80/src/App.php?f=DataForm/getCity'
         }).done(function (response) {
             console.log(response);
             city.html('');
