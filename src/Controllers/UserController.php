@@ -49,11 +49,11 @@ class UserController
             $user->shop = $request->shop;
             if ($user->create()) {
                 header('Content-type: application/json; charset=utf-8');
-                echo json_encode(['menssage' => 'Registro correctamente', 'user_id' => $user->getUserId()]);
+                echo json_encode(array('menssage' => 'Registro correctamente', 'user_id' => $user->getUserId()));
                 return true;
             }
             header('Content-type: application/json; charset=utf-8');
-            echo json_encode(['menssage' => 'Error a la hora de registrar el usuario']);
+            echo json_encode(array('menssage' => 'Error a la hora de registrar el usuario'));
             return false;
         } else {
             header('Content-type: application/json; charset=utf-8');

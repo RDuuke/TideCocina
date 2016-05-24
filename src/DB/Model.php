@@ -58,7 +58,23 @@ abstract class Model extends Conexion
 
     }
 
+    public function innerJoin($select,$table, $campos){
+        $sth = $this->conexion->query(" SELECT $select FROM $this->table INNER JOIN $table ON $campos");
+        $count = $sth->rowCount();
+        if ($count > 1){
+            $result = $sth->fetchAll(\PDO::FETCH_OBJ);
+            return $result;
+        }else if ($count == 1) {
+            $result = $sth->fetch(\PDO::FETCH_OBJ);
+            return $result;
+        }else{
+            return false;
+        }
+
+    }
+
     public function ExistsForId($id){
+
         $result = $this->conexion->query(" SELECT * FROM $this->table WHERE $this->primaryKey = $id ");
         $count = $result->rowCount();
         if ($count > 0){

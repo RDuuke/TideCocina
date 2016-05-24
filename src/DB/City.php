@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Kubbox
- * Date: 23/05/2016
- * Time: 12:31 PM
- */
+
 
 namespace src\DB;
 
