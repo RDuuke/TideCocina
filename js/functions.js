@@ -1,4 +1,5 @@
 $(function(){
+	var url = "http://localhost/src/App.php?f=";
 	var msn = "";
 	funciones = {
 		validarForm : function(){
@@ -78,7 +79,7 @@ $(function(){
 		},
 		validacionGeneral: function(){
 			var estado = false;
-			$(".formulario_registro input").each(function() {
+			$("#formulario_registro input.campo").each(function() {
 				if ($(this) != ""){
 					estado = true;
 				}
@@ -118,7 +119,7 @@ $(function(){
 			var departament = $('#departament');
     		$.ajax({
         		method: 'GET',
-        		url: 'http://localhost/TideCocina/src/App.php?f=DataForm/getDepartament'
+        		url: url+'DataForm/getDepartament'
     		}).done(function (response) {
         		//console.log(response);
        			for(var i = 0; i < response.length; i++){
@@ -131,7 +132,7 @@ $(function(){
 	        $.ajax({
 	            method: 'GET',
 	            data: {id: $id},
-	            url: 'http://localhost/TideCocina/src/App.php?f=DataForm/getCity'
+	            url: url+'DataForm/getCity'
 	        }).done(function (response) {
 	            console.log(response);
 	            city.html('');

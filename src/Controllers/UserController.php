@@ -15,6 +15,7 @@ class UserController
         $message = Validation::Required($keys, $_POST);
         $request = (object)$_POST;
         if (! Validation::validateFields($request->documentType, 1)) {
+
             array_push($message, 'El tipo de documento no es valido');
         }
         if (! Validation::areLetters($request->names)) {
