@@ -161,16 +161,16 @@
 										<label class="fuente blanco tam" for="">Número de documento*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-25 web-25">
-										<input  autocomplete="off" type="text" class="campo fuente" id="cedula">
+										<input  autocomplete="off" name="document" type="text" class="campo fuente" id="cedula">
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-25 web-25">
 										<label class="fuente blanco tam" for="">Tipo de documento*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-25 web-25">
-										<select name=""class="campo fuente" id="t_doc">
+										<select class="campo fuente" name="document_type"id="t_doc">
 											<option value="">Seleccione un documento</option>
-											<option value="C.C">CC</option>
-											<option value="C.E">N° Pasaporte</option>
+											<option value="CC">CC</option>
+											<option value="NP">N° Pasaporte</option>
 										</select>
 									</div>
 									<div class="j-separator-20"></div>
@@ -178,23 +178,23 @@
 										<label class="fuente blanco tam" for="">Nombres*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-40 web-40">
-										<input  autocomplete="off" type="text"class="campo fuente" id="nombre">
+										<input  autocomplete="off" name="names" type="text"class="campo fuente" id="nombre">
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-10 web-10">
 										<label class="fuente blanco tam" for="">Apellidos*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-40 web-40">
-										<input  autocomplete="off" type="text"class="campo fuente" id="apellido">
+										<input  autocomplete="off" type="text"class="campo fuente" name="lastname" id="apellido">
 									</div>
 									<div class="j-separator-20"></div>
 									<div class="ed-item base-100 movil-100 tablet-20 web-20">
 										<label class="fuente blanco tam" for="">Fecha de nacimiento*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-15 web-15">
-										<input  autocomplete="off" type="number"class="campo fuente" placeholder="Día" id="dia">
+										<input  autocomplete="off" type="number"class="campo fuente" name="dia" placeholder="Día" id="dia">
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-15 web-15">
-										<select name=""class="campo fuente" id="mes">
+										<select name="mes"class="campo fuente" id="mes">
 											<option value="">Mes</option>	
 											<option value="01">Enero</option>
 											<option value="02">Febrero</option>
@@ -211,13 +211,13 @@
 										</select>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-15 web-15">
-										<input  autocomplete="off" type="number"class="campo fuente" id="anno"placeholder="año">
+										<input  autocomplete="off" type="number"class="campo fuente" name="anno" id="anno"placeholder="año">
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-15 web-15">
 										<label class="fuente blanco tam" for="">Genero*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-20 web-20">
-										<select name=""class="campo fuente" id="genero">
+										<select name="gender" class="campo fuente" id="genero">
 											<option value="">Genero</option>
 											<option value="F">Femenino</option>
 											<option value="M">Masculino</option>	
@@ -228,33 +228,33 @@
 										<label class="fuente blanco tam" for="">Teléfono*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-35 web-35">
-										<input  autocomplete="off" type="number"class="campo fuente" id="telefono">
+										<input  autocomplete="off" type="number" name="telephone" class="campo fuente" id="telefono">
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-20 web-20">
 										<label class="fuente blanco tam" for="">Correo electrónico*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-35 web-35">
-										<input  autocomplete="off" type="email"class="campo fuente" id="email">
+										<input  autocomplete="off" type="email" name="email" class="campo fuente" id="email">
 									</div>
 									<div class="j-separator-20"></div>
 									<div class="ed-item base-100 movil-100 tablet-20 web-20">
 										<label class="fuente blanco tam" for="">Departamento*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-20 web-20" >
-										<select name=""class="campo fuente" id="departament" ></select>
+										<select name="department"class="campo fuente" id="departament" ></select>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-20 web-20">
 										<label class="fuente blanco tam" for="">Ciudad*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-20 web-20">
-										<select name=""class="campo fuente" id="city"></select>
+										<select name="city"class="campo fuente" id="city"></select>
 									</div>
 									<div class="j-separator-20"></div>
 									<div class="ed-item base-100 movil-100 tablet-50 web-50">
 										<label class="fuente blanco tam" for="">¿Dónde realizaste la compra?*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-50 web-50">
-										<select name=""class="campo fuente" id="ciudades">
+										<select name="shop"class="campo fuente" id="ciudades">
 											<option value="EXITO" >EXITO</option>
 											<option value="CARULLA" >CARULLA</option>	
 											<option value="JUMBO" >JUMBO</option>	
@@ -272,29 +272,29 @@
 									<div class="j-separator-10"></div>
 									<div class="ed-container my-clase"> 
 										<div class="ed-item base-100 movil-100 tablet-20 web-20">
-											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Original</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Original</label>
 											<div class="j-separator-10"></div>
-											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Original HE</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Original HE</label>
 										</div>
 										<div class="ed-item base-100 movil-100 tablet-20 web-20">
-											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Sport</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Sport</label>
 											<div class="j-separator-10"></div>
-											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide con Downy</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide con Downy</label>
 										</div>
 										<div class="ed-item base-100 movil-100 tablet-20 web-20">
-											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Bleach</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Bleach</label>
 											<div class="j-separator-10"></div>
-											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Free & Gentle</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Free & Gentle</label>
 										</div>
 										<div class="ed-item base-100 movil-100 tablet-20 web-20">
-											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide To Go</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide To Go</label>
 											<div class="j-separator-10"></div>
-											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Febreze Spring & Renewal</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Febreze Spring & Renewal</label>
 										</div>
 										<div class="ed-item base-100 movil-100 tablet-20 web-20">
-											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Stain Release</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Stain Release</label>
 											<div class="j-separator-10"></div>
-											<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam_check" for="">Tide Pods</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Pods</label>
 										</div>
 									</div>
 								<div class="ed-container">
@@ -302,8 +302,8 @@
 									<hr class="blanco linea">
 									<div class="j-separator-10"></div>
 									<div class="ed-item base-100 movil-100 tablet-70 web-70">
-										<input  class="check fuente blanco tam" id="terminos" type="checkbox"><label class="fuente blanco tam" for="">Acepta los términos y condiciones de la actividad</label><br>
-										<input  class="check" id="politicas" type="checkbox"><label class="fuente blanco tam" for="">Acepta la política de tratamiento de datos personales de Prebel</label>
+										<input  class="check fuente blanco tam" name="terms" id="terminos" type="checkbox" value="1"><label class="fuente blanco tam" for="" >Acepta los términos y condiciones de la actividad</label><br>
+										<input  class="check" id="politicas" name="authorization_info" type="checkbox" value="1"><label class="fuente blanco tam" for="">Acepta la política de tratamiento de datos personales de Prebel</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-30 web-30">
 										<button class=" btn btn-success boton mayuscula"id="enviaform">Continuar</button>

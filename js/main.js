@@ -1,6 +1,13 @@
 $(function () {
-    var url = "http://localhost/TideCocina/"
+    var url = "http://localhost/src/App.php?f=";
     funciones.Departament();
+    $("#cedula").keypress(function(event) {
+        if (event.keyCode >41 && event.keyCode  <58) {
+            return event.returnValue = true;
+        }else{
+            return event.returnValue = false;
+        }
+    });
     $('#departament').change(function(){
         var id = $(this).val();
         funciones.City(id);
@@ -8,20 +15,21 @@ $(function () {
     $("#enviaform").click(function(event) {
         event.preventDefault();
         funciones.validarForm();
+        var parametros = $("#formulario_registro").serialize();
+        parametros.birthdate = parametros.dia+parametros.mes+parametros.anno;
         $.ajax({
-            url: '',
-            type: 'default GET (Other values: POST)',
-            dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-            data: {param1: 'value1'},
+            url: url+"User/store",
+            type: 'POST',
+            data: parametros,
         })
-        .done(function() {
-            console.log("success");
+        .done(function(response) {
+            console.log(response);
         })
-        .fail(function() {
-            console.log("error");
+        .fail(function(response) {
+            console.log(response);
         })
-        .always(function() {
-            console.log("complete");
+        .always(function(response) {
+            console.log(response);
         });
         
     });
