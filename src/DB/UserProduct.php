@@ -12,8 +12,8 @@ class UserProduct extends Model
     public function Create($usid, $proid){
 
         $sth = $this->conexion->prepare("INSERT INTO $this->table (user_id, porduct_id) VALUES (:user_id, :product_id)");
-        $sth->binParam(':user_id', $usid, \PDO::PARAM_INT);
-        $sth->binParam(':product_id', $proid, \PDO::PARAM_INT);
+        $sth->bindParam(':user_id', $usid, \PDO::PARAM_INT);
+        $sth->bindParam(':product_id', $proid, \PDO::PARAM_INT);
         if($sth->execute()){
             return true;
         }

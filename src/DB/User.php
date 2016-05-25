@@ -43,7 +43,7 @@ class User extends Model
             $sth->bindParam(':shop', $this->shop, \PDO::PARAM_STR);
             if($sth->execute()){
                 $this->userId = $this->conexion->lastInsertId();
-                echo true;
+                return true;
             }
             return false;
     }

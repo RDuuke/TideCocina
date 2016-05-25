@@ -25,6 +25,10 @@ class Ratings extends Model
         $sth->binParam(':cocina_id', $cocid, \PDO::PARAM_INT);
         $sth->binParam(':user_id', $usid, \PDO::PARAM_INT);
         $sth->binParam(':correo_votante', $email, \PDO::PARAM_STR);
+        if($sth->execute()){
+            return true;
+        }
+        return false;
     }
 
     public function totalVoteForIdCook($cocid){

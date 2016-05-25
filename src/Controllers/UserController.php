@@ -54,8 +54,8 @@ class UserController
             if ($user->create()) {
                 $products = new UserProduct();
                 header('Content-type: application/json; charset=utf-8');
-                foreach($_POST['products'] as $product){
-                    $products->Create($user->getUserId(), $product);
+                foreach($_POST['products'] as $p){
+                    $products->Create($user->getUserId(), $p);
                 }
                 echo json_encode(array('menssage' => 'Registro correctamente', 'user_id' => $user->getUserId()));
                 return true;
