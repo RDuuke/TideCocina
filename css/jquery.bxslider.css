@@ -346,6 +346,22 @@ a:focus {
     color: #fff !important;
     text-decoration: underline;
 }
-.heigt{
-	height: 720px;
+.heigt {
+    height: 720px;
+    background-color: #C5D31C !important;
+}
+.btn-accion {
+    padding: 14px 10px;
+    display: block;
+    width: 80%;
+    margin: 6px auto;
+    text-align: center;
+    background-color: #00937B;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bolder;
+    text-decoration: none !important;
+}
+.btn-accion:hover{
+	color: #fff;
 }

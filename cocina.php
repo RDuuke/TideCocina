@@ -80,8 +80,8 @@
 				<div class="slide"><a href="" class="addFondo"><img src="images/2.jpg"></a></div>
 				<div class="slide"><a href="" class="addFondo"><img src="images/3.jpg"></a></div>
 			</div>
-			<a href="#" id="removeFoto">Eliminar FOTO</a> -
-			<a href="#" id="rasterize">Generar imagen</a> 
+			<a href="#" class="btn-accion"id="removeFoto">Eliminar FOTO</a>
+			<a href="#" class="btn-accion"id="rasterize">Generar imagen</a> 
 		</div>
 	</div>
 </body>
