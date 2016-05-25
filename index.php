@@ -41,86 +41,7 @@
 
 	<link rel="shortcut icon" href="tide.ico">
 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-
-<style>
-	.campo {
-    font-family: 'AutoradiographicRg-Regular';
-    padding: 9px 6px;
-    width: 100%;
-    border: 0;
-    border-radius: 7px;
-    -moz-box-shadow: 0 0 5px #ccc;
-    -webkit-box-shadow: 0 0 5px #ccc;
-    box-shadow: 0 0 5px #ccc;
-}
-.color-fuente{
-	color: #00937B;
-	font-family: 'Pacifico', cursive;
-}
-.linea {
-    width: 100%;
-    border: 1px solid #ccc;
-}
-.blanco {
-    color: #000;
-    font-weight: bold !important;
-    font-size: 20px;
-}
-.fuente{
-	font-family: 'HelveticaNeue-Thin' !important;
-}
-.fondo {
-    background-image: url(images/TIDE_COCINA-DE-SUEÑOS_Q.jpg);
-    background-size: contain;
-    margin-top: -54px;
-}
-.tam_check{
-	font-size: 14px;
-}
-.color_titulo_registro{
-	color: #00937B;
-	font-family: 'Pacifico', cursive;
-}
-.error {
-    background-color: rgba(255, 255, 255, 0.75);
-    z-index: 5000000000;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    display: none;
-}
-.ventana {
-    max-width: 400px;
-    height: auto;
-    margin: 8% auto;
-    position: relative;
-    -moz-box-shadow: 0 0 5px #ccc;
-    -webkit-box-shadow: 0 0 5px #ccc;
-    box-shadow: 0px 0px 17px #ccc;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 14px 40px;
-    border-radius: 10px;
-}
-.salir {
-    position: absolute;
-    color: #00937B;
-    font-size: 18px;
-    border: 1px solid;
-    border-radius: 5px;
-    right: 15px;
-    top: 15px;
-    cursor: pointer;
-    padding: 1px 7px;
-    font-weight: bolder;
-}
-#mensajes{
-	text-align: justify;
-	margin: 10px auto;
-}
-</style>
+<link rel="stylesheet" href="css/jquery.bxslider.css">
 
 	<script>
 
@@ -187,7 +108,7 @@
 
 								<li><a href="#inicio" class="baja">¿Cómo participar?</a></li>
 
-								<li><a href="#inicio" class="baja">CREA TU COCINA</a></li>
+								<li><a href="cocina.php">CREA TU COCINA</a></li>
 
 								<li><a href="#productos" class="baja">Nuestros <br> productos</a></li>
 
