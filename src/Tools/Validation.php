@@ -32,7 +32,7 @@ class Validation
     }
 
     static function areLetters($campo){
-        if(preg_match('|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|', $campo)) {
+        if(preg_match('|[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+|', $campo)) {
            return true;
         }
         return false;

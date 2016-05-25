@@ -4,6 +4,7 @@ namespace src\Controllers;
 
 use src\DB\User;
 use src\DB\UserCook;
+use src\DB\UserProduct;
 use src\Tools\Validation;
 
 class UserController
@@ -51,7 +52,11 @@ class UserController
             $user->city = $request->city;
             $user->shop = $request->shop;
             if ($user->create()) {
+                $products = new UserProduct();
                 header('Content-type: application/json; charset=utf-8');
+                foreach($_POST['products'] as $product){
+                    $products->Create($user->getUserId(), $product);
+                }
                 echo json_encode(array('menssage' => 'Registro correctamente', 'user_id' => $user->getUserId()));
                 return true;
             }

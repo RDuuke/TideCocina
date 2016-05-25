@@ -45,7 +45,7 @@ class User extends Model
                 $this->userId = $this->conexion->lastInsertId();
                 echo true;
             }
-            return print_r($sth->errorInfo());
+            return false;
     }
 
     public function getUserId()
