@@ -42,6 +42,8 @@ class CookController
             $codes = new UserCode();
             if($codes->Total($user->user_id) > $this->cook->Total($user->user_id)){
                 if($this->cook->Create($user->user_id, $request->nombre_cocina)){
+                    $code = new Code();
+                    $code->existsCode();
                     header('Content-type: application/json; charset=utf-8');
                     echo json_encode(array('menssage' => 'La cocina se ha guardado correctamente'));
                     return true;
