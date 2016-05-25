@@ -6,6 +6,8 @@ $(function(){
 			/* validación general */
 			if(! funciones.validacionGeneral()){
 				msn = msn+"<p>Todos los campos del formulario son requeridos</p>";
+				funciones.mensajes(msn);
+				return false;
 			}else{
 				
 				/* Validacion de la Cedula */			
@@ -13,13 +15,20 @@ $(function(){
 				campo_cedula.split("");
 				if (isNaN(campo_cedula)){
 					msn = msn+"<p>El campo cadula no es numerico </p> ";
+					funciones.mensajes(msn);
+					return false;
 				}else{
 					var inicio = campo_cedula[0];
 					if (inicio == 0){
 						msn = msn + "<p>La cedula no puede iniciar en " + inicio +"</p> ";
+						funciones.mensajes(msn);
+						return false;
+
 					}
 					if (campo_cedula.length < 7) {
-						msn = msn + "<p>Los digitos de la cedula no pueden ser menores que 7 </p> ";	
+						msn = msn + "<p>Los digitos de la cedula no pueden ser menores que 7 </p> ";
+						funciones.mensajes(msn);
+						return false;
 					}
 				}
 
@@ -27,12 +36,16 @@ $(function(){
 				var campo_nombre = $("#nombre").val();
 				if (!isNaN(campo_nombre)){
 					msn = msn+"<p>En el campo nombre no se aceptan numeros solo letras </p>";
+					funciones.mensajes(msn);
+					return false;
 				}
 				
 				/* Validacion del Apellido */
 				var campo_apellido = $("#apellido").val();
 				if (!isNaN(campo_apellido)){
 					msn = msn+"<p>En el campo Apellidos no se aceptan numeros solo letras </p>";
+					funciones.mensajes(msn);
+					return false;
 				}
 				
 				/* validacion del telefono */
@@ -40,10 +53,14 @@ $(function(){
 				campo_telefono.split("");
 				var inicio = campo_telefono[0];
 				if (inicio == 0){
-					msn = msn+"<p>La teléfono no puede iniciar en " + inicio +" </p>";		
+					msn = msn+"<p>La teléfono no puede iniciar en " + inicio +" </p>";	
+					funciones.mensajes(msn);	
+					return false;
 				}
 				if (campo_telefono.length < 7) {
 					msn = msn+"<p>Los digitos de el teléfono no pueden ser menores que 7 </p>";	
+					funciones.mensajes(msn);
+					return false;
 				}
 				
 				/* Validacion del Email */
@@ -51,20 +68,27 @@ $(function(){
 				expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 				if(!expr.test(campo_email)){
 					msn = msn+"<p>El "+campo_email+" no es un correo </p>";
+					funciones.mensajes(msn);
+					return false;
 				}
 
 				/* Terminos y condiciones  */
 				if (!$("#terminos").is(':checked')) {
 					msn = msn+"<p>No se ha Seleccionano los terminos y condiciones </p>";
+					funciones.mensajes(msn);
+					return false;
 				}
 				/* Productos */
 				if(! funciones.validaCheck()){
 					msn = msn+"<p>No se ha Seleccionano Ningun producto </p>";
+					funciones.mensajes(msn);
+					return false;
 				}
 			}
 			
 			funciones.mensajes(msn);
 			msn ="";
+			return true;
 		
 		},
 		validaCheck: function(){
@@ -80,7 +104,7 @@ $(function(){
 		validacionGeneral: function(){
 			var estado = false;
 			$("#formulario_registro input.campo").each(function() {
-				if ($(this) != ""){
+				if ($(this).val() != ""){
 					estado = true;
 				}
 			});
