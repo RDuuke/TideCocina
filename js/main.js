@@ -14,22 +14,22 @@ $(function () {
     });
     $("#enviaform").click(function(event) {
         event.preventDefault();
-        funciones.validarForm();
-        var parametros = $("#formulario_registro").serialize();
-        $.ajax({
-            url: url+"User/store",
-            type: 'POST',
-            data: parametros,
-        })
-        .done(function(response) {
-            console.log(response);
-        })
-        .fail(function(response) {
-            console.log(response);
-        })
-        .always(function(response) {
-            console.log(response);
-        });
+        if(funciones.validarForm()){ 
+            var parametros = $("#formulario_registro").serialize();
+            $.ajax({
+                url: url+"User/store",
+                type: 'POST',
+                data: parametros,
+            })
+            .done(function(response) {
+                console.log(response);
+            })
+            .fail(function(response) {
+                console.log(response);
+            });
+        }else{
+            console.log("no dio");
+        }
         
     });
     $(".x").click(function(event) {

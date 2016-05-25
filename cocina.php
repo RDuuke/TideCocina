@@ -66,10 +66,10 @@
 				</canvas>
 			</div>
 			<div class="ed-container total fondo_cafe">
-				<div class="ed-item web-75 movil-75 base-75 tablet-75 text-right">
+				<div class="ed-item web-70 movil-70 base-70 tablet-70 text-right">
 					<span class="indicadores_orden">COCINA</span>
 				</div>
-				<div class="ed-item web-25 movil-25 base-25 tablet-25">
+				<div class="ed-item web-30 movil-30 base-30 tablet-30">
 					<span class="indicadores_orden">ZONA DE ROPAS</span>
 				</div>
 			</div>

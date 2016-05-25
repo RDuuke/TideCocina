@@ -272,29 +272,29 @@
 									<div class="j-separator-10"></div>
 									<div class="ed-container my-clase"> 
 										<div class="ed-item base-100 movil-100 tablet-20 web-20">
-											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Original</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]" value="1"><label class="fuente blanco tam_check" for="">Tide Original</label>
 											<div class="j-separator-10"></div>
-											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Original HE</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]" value="6"><label class="fuente blanco tam_check" for="">Tide Original HE</label>
 										</div>
 										<div class="ed-item base-100 movil-100 tablet-20 web-20">
-											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Sport</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]" value="2"><label class="fuente blanco tam_check" for="">Tide Sport</label>
 											<div class="j-separator-10"></div>
-											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide con Downy</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]" value="7"><label class="fuente blanco tam_check" for="">Tide con Downy</label>
 										</div>
 										<div class="ed-item base-100 movil-100 tablet-20 web-20">
-											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Bleach</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]" value="3"><label class="fuente blanco tam_check" for="">Tide Bleach</label>
 											<div class="j-separator-10"></div>
-											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Free & Gentle</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]" value="8"><label class="fuente blanco tam_check" for="">Tide Free & Gentle</label>
 										</div>
 										<div class="ed-item base-100 movil-100 tablet-20 web-20">
-											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide To Go</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]" value="4"><label class="fuente blanco tam_check" for="">Tide To Go</label>
 											<div class="j-separator-10"></div>
-											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Febreze Spring & Renewal</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]" value="9"><label class="fuente blanco tam_check" for="">Tide Febreze Spring & Renewal</label>
 										</div>
 										<div class="ed-item base-100 movil-100 tablet-20 web-20">
-											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Stain Release</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]" value="5"><label class="fuente blanco tam_check" for="">Tide Stain Release</label>
 											<div class="j-separator-10"></div>
-											<input  class="check" id="politicas" type="checkbox" name="products[]"><label class="fuente blanco tam_check" for="">Tide Pods</label>
+											<input  class="check" id="politicas" type="checkbox" name="products[]" vlule="10"><label class="fuente blanco tam_check" for="">Tide Pods</label>
 										</div>
 									</div>
 								<div class="ed-container">
