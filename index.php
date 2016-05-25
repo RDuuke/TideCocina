@@ -138,7 +138,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-12 pull-right init-box--right">
-						<div class="ed-container total fondo-registro">
+						<div class="ed-container total fondo-registro" id="esconder">
 						<div class="j-separator-20"></div>
 						<div class="ed-container p-relativa">
 							<div class="ed-item base-50 movil-50 tablet-15 web-15">
@@ -311,6 +311,32 @@
 									<div class="j-separator-40"></div>
 								</div>
 							</form>
+						</div>
+					</div>
+					<div id="ingresa-codigo">
+						<div class="ed-container p-relativa">
+							<div class="ed-item base-50 movil-50 tablet-15 web-15">
+								<img src="images/logo_tide.png" alt="">
+							</div>
+							<div class="ed-item base-50 movil-50 tablet-15 web-15">
+								<img src="images/casade_logo.png" alt="">
+							</div>
+						</div>
+						<div class="ventana">
+							<div class="j-separator-40"></div>
+							<h1 class="total text-center color-fuente ">Ingresa tú código</h1>
+							<div class="j-separator-40"></div>
+							<form action="" id="ingresaCodigo"> 
+								<input  autocomplete="off" type="text" name="cedRegistro" class="campo fuente" id="cedRegistro" placeholder="Cédula">
+								<div class="j-separator-10"></div>
+								<input  autocomplete="off" type="text" name="codigo" class="campo fuente" id="codigo" placeholder="Código">
+								<input type="hidden" id="id_user">
+							</form>
+							<div class="j-separator-40"></div>
+							<div class="text-center"> 
+								<button class="btn btn-success" id="btn-envia-codigo">Enviar</button>
+							</div>
+							<div class="j-separator-40"></div>
 						</div>
 					</div>
 				</div>
