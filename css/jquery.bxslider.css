@@ -365,3 +365,6 @@ a:focus {
 .btn-accion:hover{
 	color: #fff;
 }
+#ingresa-codigo{
+	display: none;
+}
