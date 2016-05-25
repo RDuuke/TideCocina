@@ -3,8 +3,10 @@
 namespace src\Controllers;
 
 
+use src\DB\Code;
 use src\DB\Ratings;
 use src\DB\User;
+use src\DB\UserCode;
 use src\DB\UserCook;
 use src\Tools\Image;
 use src\Tools\Validation;
@@ -22,28 +24,31 @@ class CookController
 
     function Store(){
         $flag = true;
+        $datos = array('nombre_cocina' => 'o45x19wv', 'document' => '1038409053');
         $message = array();
-        $keys = array('user_id', 'nombre_cocina');
-        $message = Validation::Required($keys, $_POST);
-        $request = (object) $_POST;
+        $keys = array('document', 'nombre_cocina');
+        $message = Validation::Required($keys, $datos);
+        $request = (object) $datos;
         $request->nombre_cocina = Image::saveImage($request->nombre_cocina);
+        $user = $this->user->FindWhere('document = '.$request->document);
         if(count($message) > 0){
             $flag = false;
         }
-        if (Validation::isNumber($request->user_id)) {
+        if (! $user) {
             $flag = false;
         }
-        if(! $this->user->ExistsForId($request->user_id)){
-            $flag = false;
-        }
+
         if($flag){
-            if($this->cook->Create($request->user_id, $request->nombre_cocina)){
-                header('Content-type: application/json; charset=utf-8');
-                echo json_encode(array('menssage' => 'La cocina se ha guardado correctamente'));
-                return true;
+            $codes = new UserCode();
+            if($codes->Total($user->user_id) > $this->cook->Total($user->user_id)){
+                if($this->cook->Create($user->user_id, $request->nombre_cocina)){
+                    header('Content-type: application/json; charset=utf-8');
+                    echo json_encode(array('menssage' => 'La cocina se ha guardado correctamente'));
+                    return true;
+                }
             }
             header('Content-type: application/json; charset=utf-8');
-            echo json_encode(array('menssage' => 'Error al guardar la cocina'));
+            echo json_encode(array('menssage' => 'No tienes códigos disponibles'));
             return false;
         }
         header('Content-type: application/json; charset=utf-8');
@@ -57,8 +62,8 @@ class CookController
                                     cocina_usuario.nombre_cocina as ruta_imagen, 
                                     usuarios.user_id as user_id, 
                                     CONCAT(SUBSTRING_INDEX(usuarios.`names`, \' \', 1), \' \', SUBSTRING_INDEX(usuarios.lastname, \' \', 1)) as nombre_usuario',
-                                    'usuarios',
-                                    'usuarios.user_id = cocina_usuario.user_id');
+            'usuarios',
+            'usuarios.user_id = cocina_usuario.user_id');
         header('Content-type: application/json; charset=utf-8');
         echo json_encode($cocina);
     }
@@ -67,5 +72,5 @@ class CookController
         $rating = new Ratings();
 
     }
-        
+
 }
