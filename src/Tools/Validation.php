@@ -11,7 +11,8 @@ class Validation
         foreach ($keys as $key){
             if(array_key_exists($key, $request)) {
                 if($request[$key] == ''){
-                    array_push($message, 'El '. $key . ' es obligatorio');
+                    array_push($message, 'Todos los campos del formulario son requeridos');
+                    break;
                 }
             }
         }

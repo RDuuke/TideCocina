@@ -19,4 +19,15 @@ class UserCook extends Model
         }
         return false;
     }
+
+    public function Total($user_id){
+        $sth = $this->conexion->prepare(" SELECT COUNT(*) AS total FROM $this->table WHERE user_id = :usuario_id ");
+        $sth->binParam(':usuario_id', $user_id, \PDO::PARAM_INT);
+        $sth->execute();
+        if($sth->rowCount() > 0){
+            $data = $sth->fetch(\PDO::FETCH_OBJ);
+            return $data->total;
+        }
+        return 0;
+    }
 }

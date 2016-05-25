@@ -3,6 +3,7 @@
 namespace src\Controllers;
 
 use src\DB\User;
+use src\DB\UserCook;
 use src\Tools\Validation;
 
 class UserController
@@ -62,11 +63,5 @@ class UserController
         }
     }
 
-    public function CreateKitchen(){
-        $datos = array('codigo' => 'o45x19wv', 'document' => '1038409053');
-        $request = (object)$datos;
-        $user = new User();
-
-    }
 
 }
