@@ -69,7 +69,22 @@ class CookController
     }
 
     function Vote(){
+        $message = array();
+        $keys = array('cocina_id', 'user_id', 'correo_votante');
+        $message = Validation::Required($keys, $_POST);
+        $request = (object) $_POST;
+        if(! $this->user->ExistsForId($request->user_id)){
+            /*error*/
+        }
+        if(! Validation::isEmail($request->correo_votante)){
+            /*error*/
+        }
+        if(! $this->cook->ExistsForId($request->cocina_id)){
+            /*error*/
+        }
+
         $rating = new Ratings();
+
 
     }
 

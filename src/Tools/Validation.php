@@ -25,28 +25,28 @@ class Validation
         }else{
             $fields = array(2 => 'F', 3 => 'M');
         }
-        if(! array_push($campo, $fields) > 1){
-            return false;
+        if(array_search($campo, $fields) > 1){
+            return true;
         }
-        return true;
+        return false;
     }
 
     static function areLetters($campo){
-        if(! preg_match('[A-Za-z ]', $campo)) {
+        if(preg_match('|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|', $campo)) {
            return true;
         }
         return false;
     }
 
     static function isNumber($campo){
-        if(! filter_var($campo, FILTER_VALIDATE_INT)){
+        if(filter_var($campo, FILTER_VALIDATE_INT)){
             return true;
         }
         return false;
     }
     
     static function isEmail($campo){
-        if(! filter_var($campo, FILTER_VALIDATE_EMAIL)){
+        if(filter_var($campo, FILTER_VALIDATE_EMAIL)){
             return true;
         }
         return false;

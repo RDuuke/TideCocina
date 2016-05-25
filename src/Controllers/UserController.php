@@ -14,25 +14,25 @@ class UserController
         $message = array();
         $message = Validation::Required($keys, $_POST);
         $request = (object)$_POST;
-        if (Validation::validateFields($request->documentType, 1)) {
+        if (! Validation::validateFields($request->documentType, 1)) {
             array_push($message, 'El tipo de documento no es valido');
         }
-        if (Validation::areLetters($request->names)) {
+        if (! Validation::areLetters($request->names)) {
             array_push($message, 'El nombre no es correcto');
         }
-        if (Validation::areLetters($request->lastname)) {
+        if (! Validation::areLetters($request->lastname)) {
             array_push($message, 'El apellido no es correcto');
         }
-        if (Validation::validateFields($request->gender, 2)) {
+        if (! Validation::validateFields($request->gender, 2)) {
             array_push($message, 'El genero no es correcto');
         }
-        if (Validation::isNumber($request->departament)) {
+        if (! Validation::isNumber($request->departament)) {
             array_push($message, 'El departamento no es valido');
         }
-        if (Validation::isNumber($request->city)) {
+        if (! Validation::isNumber($request->city)) {
             array_push($message, 'La ciudad no es valida');
         }
-        if (Validation::isEmail($request->email)) {
+        if (! Validation::isEmail($request->email)) {
             array_push($message, 'El correo no es valido');
         }
         if (count($message) == 0) {
