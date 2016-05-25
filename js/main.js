@@ -16,7 +16,6 @@ $(function () {
         event.preventDefault();
         funciones.validarForm();
         var parametros = $("#formulario_registro").serialize();
-        parametros.birthdate = parametros.dia+parametros.mes+parametros.anno;
         $.ajax({
             url: url+"User/store",
             type: 'POST',

@@ -10,11 +10,12 @@ class UserController
 {
     public function Store()
     {
-        $keys = array('document', 'documentType', 'names', 'lastname', 'birthdate', 'gender', 'telephone', 'email', 'departament', 'city', 'shop');
+        $keys = array('document', 'document_type', 'names', 'lastname', 'birthdate', 'gender', 'telephone', 'email', 'department', 'city', 'shop');
         $message = array();
         $message = Validation::Required($keys, $_POST);
         $request = (object)$_POST;
-        if (! Validation::validateFields($request->documentType, 1)) {
+        $request->birthdate = $request->anno . '/' . $request->mes . '/' . $request->dia;
+        if (! Validation::validateFields($request->document_type, 1)) {
 
             array_push($message, 'El tipo de documento no es valido');
         }
@@ -27,7 +28,7 @@ class UserController
         if (! Validation::validateFields($request->gender, 2)) {
             array_push($message, 'El genero no es correcto');
         }
-        if (! Validation::isNumber($request->departament)) {
+        if (! Validation::isNumber($request->department)) {
             array_push($message, 'El departamento no es valido');
         }
         if (! Validation::isNumber($request->city)) {
@@ -39,14 +40,14 @@ class UserController
         if (count($message) == 0) {
             $user = new User();
             $user->document = $request->document;
-            $user->documentType = $request->documentType;
+            $user->documentType = $request->document_type;
             $user->names = $request->names;
             $user->lastname = $request->lastname;
             $user->birthdate = $request->birthdate;
             $user->gender = $request->gender;
             $user->telephone = $request->telephone;
             $user->email = $request->email;
-            $user->department = $request->departament;
+            $user->department = $request->department;
             $user->city = $request->city;
             $user->shop = $request->shop;
             if ($user->create()) {
