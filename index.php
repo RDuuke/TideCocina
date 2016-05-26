@@ -24,8 +24,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- ======= FONT ======= -->
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
 
+	<link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 
 	<!-- ======= CSS ======= -->
 
@@ -35,12 +37,11 @@
 
 	<link rel="stylesheet" href="css/style.css">
 
-	<link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="js/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="css/animate.css">
 
 	<link rel="shortcut icon" href="tide.ico">
-	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/jquery.bxslider.css">
 
 	<script>
@@ -104,9 +105,9 @@
 
 							<ul class="nav navbar-nav">
 
-								<li><a href="#inicio" class="baja sube line-height">Inicio</a></li>
+								<li><a href="#inicio" class="baja sube inicio line-height">Inicio</a></li>
 
-								<li><a href="#inicio" class="baja">¿Cómo participar?</a></li>
+								<li><a href="#inicio" class="">¿Cómo participar?</a></li>
 
 								<li><a href="cocina.php">CREA TU COCINA</a></li>
 
@@ -135,10 +136,11 @@
 	<div class="section section-top">
 		<div class="init fondo">
 			<!-- <img class="estatua" src="images/imagenes_tide/fondo_2.png"> -->
+						<img src="images/cocina_ppal.jpg" alt="" class="total animated fadeInLeft banner">
 			<div class="container">
-				<div class="row">
+				<div class="row animated fadeInLeft" id="oculto">
 					<div class="col-sm-12 col-md-12 pull-right init-box--right">
-						<div class="ed-container total fondo-registro" id="esconder">
+					<div class="ed-container total fondo-registro" id="esconder">
 						<div class="j-separator-20"></div>
 						<div class="ed-container p-relativa">
 							<div class="ed-item base-50 movil-50 tablet-15 web-15">
@@ -306,7 +308,7 @@
 										<input  class="check" id="politicas" name="authorization_info" type="checkbox" value="1"><label class="fuente blanco tam" for="">Acepta la política de tratamiento de datos personales de Prebel</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-30 web-30">
-										<button class=" btn btn-success boton mayuscula"id="enviaform">Continuar</button>
+										<button class=" btn btn-fondo boton mayuscula"id="enviaform">Continuar</button>
 									</div>
 									<div class="j-separator-40"></div>
 								</div>
@@ -334,14 +336,14 @@
 							</form>
 							<div class="j-separator-40"></div>
 							<div class="text-center"> 
-								<button class="btn btn-success" id="btn-envia-codigo">Enviar</button>
+								<button class="btn btn-fondo" id="btn-envia-codigo">Enviar</button>
 							</div>
 							<div class="j-separator-40"></div>
 						</div>
 					</div>
+					</div>
 				</div>
 			</div>
-		</div>
 
 			<div class="init-bottom">
 
@@ -349,17 +351,24 @@
 
 					<div class="row">
 
-						<figure class="center-block init-bottom--image">
+						<figure class="center-block init-bottom--image prelativa">
 
-							<img class="img-responsive" src="images/imagenes_tide/paquete_tyde.png" alt="" />
+							<img class="lacocinadetussuennos" src="images/lacocinadetussuennos.png" alt="">
 
+							<img class="img-responsive pbsoluta" src="images/imagenes_tide/paquete_tyde.png" alt="" />
+							
+							<img class="logo_tide" src="images/logo_tide.png" alt="">
+							
+							<img class="casade_logo" src="images/casade_logo.png" alt="">
+							<div class="p-a-botones">
+								<p>ingresa tus datos</p>
+								<button class="btn-accion participar"> Regístrate</button>
+								<div class="j-separator-10"></div>
+								<p>¿ Ya estás registrado ?</p>
+								<button class="btn-accion codigo">Ingresa tu código</button>
+							</div>
+						
 						</figure>
-
-						<div class="col-md-2 init-bottom--logo">
-
-							<img src="images/imagenes_tide/logo_coljuegos.png" class="img img-responsive center-block" alt="">
-
-						</div>
 
 					</div>
 

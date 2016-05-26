@@ -54,4 +54,23 @@ $(function () {
         $(".error").fadeOut();
         $("#mensajes").html("");
     });
+    $(".participar").click(function(event) {
+        event.preventDefault();
+        banderas = true;
+        funciones.efectoForm(banderas);
+        $("#ingresa-codigo").css('display', 'none');
+        $("#esconder").css('display', 'block');
+    });
+    $(".inicio").click(function(event) {
+        event.preventDefault();
+        banderas = false;
+       funciones.efectoForm(banderas);
+    });
+    $(".codigo").click(function(event) {
+        event.preventDefault();
+        banderas = true;
+        funciones.efectoForm(banderas);
+        $("#esconder").css('display', 'none');
+        $("#ingresa-codigo").css('display', 'block');
+    });
 });

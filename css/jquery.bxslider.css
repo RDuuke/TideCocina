@@ -356,15 +356,49 @@ a:focus {
     width: 80%;
     margin: 6px auto;
     text-align: center;
-    background-color: #00937B;
+    background-image: url(../images/boton.png) !important;
+    background-size: contain;
     color: #fff;
     font-size: 18px;
     font-weight: bolder;
     text-decoration: none !important;
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+        outline: none;
 }
 .btn-accion:hover{
 	color: #fff;
 }
 #ingresa-codigo{
 	display: none;
+}
+.btn-fondo {
+    background-image: url(../images/boton.png) !important;
+    background-size: cover;
+    color: #fff;
+    background-repeat: no-repeat;
+    border: 0;
+}
+.stilea{
+	color: #fff;
+	text-decoration: none;
+}
+.stilea:hover{
+	text-decoration: none;
+	color: #fff;
+}
+.p-a-botones {
+    width: 40%;
+    position: absolute;
+    right: 0;
+    bottom: 46px;
+    text-align: center;
+}
+.p-a-botones p {
+    color: #868585;
+    font-weight: bolder;
+    font-family: 'HelveticaNeue-Thin' !important;
+    font-size: 33px;
 }

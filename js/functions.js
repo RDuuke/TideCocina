@@ -143,15 +143,6 @@ $(function(){
 				$(".oculto-menu").addClass('active');
 			}
 		},
-		facebook: function() {
-			window.open(" http://www.facebook.com/sharer.php?s=100&p[url]=http://localhost/ardenformen/#/&p[images][0]=http://localhost/ardenformen/img/img_ppal.png&p[title]=Kit Deportivo","ventanacompartir", "toolbar=0, status=0, width=650, height=450");
-		},
-		twitter: function(){
-			window.open('https://twitter.com/home?status=Kit Deportivo Ganáte uno de los 20 balones adidas Autografiados por DAVID OSPINA + kit deportivo http://localhost/ardenformen/', '', 'width=500, height=400');
-		},
-		googlplus: function(){
-			window.open('https://plus.google.com/share?url=http://localhost/ardenformen/', '', 'width=500, height=100')
-		},
 		Departament: function(){
 			var departament = $('#departament');
     		$.ajax({
@@ -176,6 +167,19 @@ $(function(){
 	                city.append('<option value="'+ response[i].ciudad_id +'">'+ response[i].nombre +'</option>')
 	            }
 	        })
+		},
+		efectoForm: function(banderas){
+			if(banderas == true){
+				$("#oculto").css("display","block");
+				$(".banner").css('display', 'none');
+				$('html,body').animate({scrollTop:0},'slow');
+				return false; 
+			}else{
+				$("#oculto").css('display', 'none');
+				$(".banner").css("display","block");
+				$('html,body').animate({scrollTop:0},'slow');
+				return false; 
+			}
 		}
 		
 	}
