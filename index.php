@@ -111,7 +111,7 @@
 
 								<li><a href="cocina.php">CREA TU COCINA</a></li>
 
-								<li><a href="#productos" class="baja">Nuestros <br> productos</a></li>
+								<li><a href="#productos" class="baja myclass_prueba">Nuestros <br> productos</a></li>
 
 								<li><a href="#premio" class="baja line-height">Premio</a></li>
 
