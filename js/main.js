@@ -54,7 +54,7 @@ $(function () {
                 }else{
                     msn = response.message;
                     funciones.mensajes(msn);
-                    var documento = $("#cedRegistro").val();
+                    var documento = $("#document").val();
                     localStorage.setItem("documento", documento);
                     setTimeout(function(){ window.location.replace("/cocina.php"); }, 3000);
                     
