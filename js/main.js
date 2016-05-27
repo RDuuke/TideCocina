@@ -10,9 +10,46 @@ $(function () {
             return event.returnValue = false;
         }
     });
+    $("#dia").keypress(function(event) {
+        if (event.keyCode >41 && event.keyCode  <58) {
+            return event.returnValue = true;
+        }else{
+            return event.returnValue = false;
+        }
+    });
+        $("#anno").keypress(function(event) {
+        if (event.keyCode >41 && event.keyCode  <58) {
+            return event.returnValue = true;
+        }else{
+            return event.returnValue = false;
+        }
+    });
+    $("#telefono").keypress(function(event) {
+        if (event.keyCode >41 && event.keyCode  <58) {
+            return event.returnValue = true;
+        }else{
+            return event.returnValue = false;
+        }
+    });
     $('#departament').change(function(){
         var id = $(this).val();
         funciones.City(id);
+    });
+    $("#btn-envia-codigo").click(function(event) {
+        event.preventDefault();
+        if(funciones.validaCodigo()){
+            var parametros_formCodigo = $("#ingresaCodigo").serialize();
+            // console.log(parametros_formCodigo);
+            $.ajax({
+                url: url+'Code/Store',
+                type: 'POST',
+                data: parametros_formCodigo,
+            })
+            .done(function(response) {
+                console.log("success");
+            });
+            
+        }
     });
     $("#enviaform").click(function(event) {
         event.preventDefault();
@@ -30,7 +67,7 @@ $(function () {
                 funciones.mensajes("<p class='text-center fuente total'>"+messages+"</p>");
                 $("#esconder").fadeOut();
                 $("#ingresa-codigo").fadeIn();
-                $("#cedRegistro").val($("#cedula").val());
+                $("#document").val($("#cedula").val());
                 $("#id_user").val(user_id);
                 $("#codigo").focus();
             })
@@ -49,6 +86,7 @@ $(function () {
         }
         
     });
+
 
 
     $(".x").click(function(event) {

@@ -1,142 +1,67 @@
 <!DOCTYPE html>
-
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-
 <!--[if gt IE 8]><!-->
-
 <html class="no-js" lang="es"> <!--<![endif]-->
-
 <head>
-
 	<meta charset="UTF-8">
-
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<link rel="stylesheet" href="css/ed-grid.css">
-
 	<title>Tide</title>
-
 	<meta name="description" content="">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<!-- ======= FONT ======= -->
 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-
-
 	<link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-
 	<!-- ======= CSS ======= -->
-
 	<link rel="stylesheet" href="css/lib/bootstrap.css">
-
-	<!-- <link rel="stylesheet" href="css/lib/bootstrap.min.css"> -->
-
 	<link rel="stylesheet" href="css/style.css">
-
-
 	<link rel="stylesheet" href="js/jquery.mCustomScrollbar.css">
 	<link rel="stylesheet" href="css/animate.css">
-
 	<link rel="shortcut icon" href="tide.ico">
-<link rel="stylesheet" href="css/jquery.bxslider.css">
-
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
 	<script>
-
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-
-
-		ga('create', 'UA-46752858-10', 'auto');
-
-		ga('send', 'pageview');
-
-
-
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46752858-10', 'auto');ga('send', 'pageview');
 	</script>
-
 </head>
-
 <body>
-
 <!--[if lt IE 8]>
-
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-
 <![endif]-->
-
 <div>
-
 	<div class="menuFixed-Main">
-
 		<div class="menuFixed">
-
 			<div class="container">
-
 				<div class="row">
 					<nav class="col-sm-12 col-md-12 navbar navbar-default navbar-static-top">
-
 						<div class="navbar-header">
-
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-
 								<span class="sr-only">Toggle navigation</span>
-
 								<span class="icon-bar"></span>
-
 								<span class="icon-bar"></span>
-
 								<span class="icon-bar"></span>
-
 							</button>
-
 						</div>
-
 						<div class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
-
 							<ul class="nav navbar-nav">
-
 								<li><a href="#inicio" class="baja sube inicio line-height">Inicio</a></li>
-
 								<li><a href="#inicio" class="">¿Cómo participar?</a></li>
-
 								<li><a href="cocina.php">CREA TU COCINA</a></li>
-
 								<li><a href="#productos" class="baja myclass_prueba">Nuestros <br> productos</a></li>
-
 								<li><a href="#premio" class="baja line-height">Premio</a></li>
-
 								<li><a href="#" id="termino" class="mTop">Términos y <br>condiciones</a></li>
-
 								<li><a href="#contacto" id="contacto" class="line-height">Contacto</a></li>
-
 							</ul>
-
 						</div>
-
 					</nav>
-
 				</div>
-
 			</div>
-
 		</div>
-
 	</div>
-
 	<div class="section section-top">
 		<div class="init fondo">
-			<!-- <img class="estatua" src="images/imagenes_tide/fondo_2.png"> -->
-						<img src="images/cocina_ppal.jpg" alt="" class="total animated fadeInLeft banner">
+			<img src="images/cocina_ppal.jpg" alt="" class="total animated fadeInLeft banner">
 			<div class="container">
 				<div class="row animated fadeInLeft" id="oculto">
 					<div class="col-sm-12 col-md-12 pull-right init-box--right">
@@ -180,20 +105,20 @@
 										<label class="fuente blanco tam" for="">Nombres*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-40 web-40">
-										<input  autocomplete="off" name="names" type="text"class="campo fuente" id="nombre">
+										<input  onkeypress="funciones.sololetras();"autocomplete="off" name="names" type="text"class="campo fuente" id="nombre">
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-10 web-10">
 										<label class="fuente blanco tam" for="">Apellidos*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-40 web-40">
-										<input  autocomplete="off" type="text"class="campo fuente" name="lastname" id="apellido">
+										<input  onkeypress="funciones.sololetras();"autocomplete="off" type="text"class="campo fuente" name="lastname" id="apellido">
 									</div>
 									<div class="j-separator-20"></div>
 									<div class="ed-item base-100 movil-100 tablet-20 web-20">
 										<label class="fuente blanco tam" for="">Fecha de nacimiento*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-15 web-15">
-										<input  autocomplete="off" type="number"class="campo fuente" name="dia" placeholder="Día" id="dia">
+										<input  autocomplete="off" type="text"class="campo fuente" name="dia" placeholder="Día" id="dia">
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-15 web-15">
 										<select name="mes"class="campo fuente" id="mes">
@@ -213,7 +138,7 @@
 										</select>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-15 web-15">
-										<input  autocomplete="off" type="number"class="campo fuente" name="anno" id="anno"placeholder="año">
+										<input  autocomplete="off" type="text"class="campo fuente" name="anno" id="anno"placeholder="año">
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-15 web-15">
 										<label class="fuente blanco tam" for="">Genero*</label>
@@ -230,7 +155,7 @@
 										<label class="fuente blanco tam" for="">Teléfono*</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-35 web-35">
-										<input  autocomplete="off" type="number" name="telephone" class="campo fuente" id="telefono">
+										<input  autocomplete="off" type="text" name="telephone" class="campo fuente" id="telefono">
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-20 web-20">
 										<label class="fuente blanco tam" for="">Correo electrónico*</label>
@@ -329,7 +254,7 @@
 							<h1 class="total text-center color-fuente ">Ingresa tú código</h1>
 							<div class="j-separator-40"></div>
 							<form action="" id="ingresaCodigo"> 
-								<input  autocomplete="off" type="text" name="cedRegistro" class="campo fuente" id="cedRegistro" placeholder="Cédula">
+								<input  autocomplete="off" type="text" name="document" class="campo fuente" id="cedRegistro" placeholder="Cédula">
 								<div class="j-separator-10"></div>
 								<input  autocomplete="off" type="text" name="codigo" class="campo fuente" id="codigo" placeholder="Código">
 								<input type="hidden" id="id_user">
@@ -344,7 +269,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="init-bottom">
 
 				<div class="container">
