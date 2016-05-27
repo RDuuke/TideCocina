@@ -186,7 +186,7 @@
 			        url: url+'Cook/Store',
 			        type: 'POST',
 			        data: {
-			        	'nombre_cocina': "imagen_archivo",
+			        	'nombre_cocina': imagen_archivo,
 			        	'document': documento
 			        },
 			    })
