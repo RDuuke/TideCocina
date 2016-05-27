@@ -193,7 +193,6 @@
 			    .done(function() {
 			        console.log("success");
 			    });
-    		  	// window.open(canvas.toDataURL('png'));
     		}
   		}
 
