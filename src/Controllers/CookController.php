@@ -47,16 +47,16 @@ class CookController
                     $codes->existsCode($code->codigo);
                     $codes->updateStatus();
                     header('Content-type: application/json; charset=utf-8');
-                    echo json_encode(array('menssage' => 'La cocina se ha guardado correctamente'));
+                    echo json_encode(array('menssage' => 'La cocina se ha guardado correctamente', 'status' => 1));
                     return true;
                 }
             }
             header('Content-type: application/json; charset=utf-8');
-            echo json_encode(array('menssage' => 'No tienes códigos disponibles'));
+            echo json_encode(array('menssage' => 'No tienes códigos disponibles', 'status' => 0));
             return false;
         }
         header('Content-type: application/json; charset=utf-8');
-        echo json_encode(array('menssage' => 'Error al guardar la cocina'));
+        echo json_encode(array('menssage' => 'Error al guardar la cocina', 'status' => 0 ));
         return false;
     }
 
@@ -100,20 +100,20 @@ class CookController
                 if($rating->FindWhere(" correo_votante = '".$request->correo_votante."'") === false){
                     if($rating->Create($request->cocina_id, $request->user_id, $request->correo_votante)){
                         header('Content-type: application/json; charset=utf-8');
-                        echo json_encode(array('message' => 'Has votado satisfactoriamente'));
+                        echo json_encode(array('message' => 'Has votado satisfactoriamente', 'status' => 1));
                         return true;
                     }
 
                 }else{
                     if($rating->Update($request->cocina_id, $request->user_id, $request->correo_votante)){
                         header('Content-type: application/json; charset=utf-8');
-                        echo json_encode(array('message' => 'Has votado satisfactoriamente'));
+                        echo json_encode(array('message' => 'Has votado satisfactoriamente', 'status' => 1));
                         return true;
                     }
                 }
             }
             header('Content-type: application/json; charset=utf-8');
-            echo json_encode(array('message' => 'Error al votar'));
+            echo json_encode(array('message' => 'Error al votar', 'status' => 0));
             return false;
         }
         header('Content-type: application/json; charset=utf-8');

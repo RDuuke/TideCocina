@@ -26,20 +26,20 @@ class CodeController
                 $user = $user->FindWhere('document = ' . $request->document);
                 if ($this->usercode->Create($user->user_id, $this->code->getIdCodigo())) {
                     header('Content-type: application/json; charset=utf-8');
-                    echo json_encode(array('message' => 'Código registrado correctamente'));
+                    echo json_encode(array('message' => 'Código registrado correctamente', 'status' => 1));
                     return true;
                 }
                 header('Content-type: application/json; charset=utf-8');
-                echo json_encode(array('message' => 'Error al registrar el código'));
+                echo json_encode(array('message' => 'Error al registrar el código', 'status' => 0));
                 return false;
             }
             header('Content-type: application/json; charset=utf-8');
-            echo json_encode(array('message' => 'Error al registrar el código'));
+            echo json_encode(array('message' => 'Error al registrar el código', 'status' => 0));
             return false;
             
         }
         header('Content-type: application/json; charset=utf-8');
-        echo json_encode(array('message' => 'Error al registrar el código'));
+        echo json_encode(array('message' => 'Error al registrar el código', 'status' => 0));
         return false;
     }
 
