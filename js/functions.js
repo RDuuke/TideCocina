@@ -133,6 +133,7 @@ $(function(){
 				}
 			});
 			return estado;
+			//hola
 		},
 		validaCodigo: function(){
 			if(! funciones.validacodigovacio()){ 
