@@ -51,11 +51,13 @@ $(function () {
                 if(response.status == 0 || response.status == "0"){
                     msn = msn+response.message;
                     funciones.mensajes(msn);
+                    msn = "";
                 }else{
                     msn = response.message;
                     funciones.mensajes(msn);
                     var documento = $("#document").val();
                     localStorage.setItem("documento", documento);
+                    msn = "";
                     setTimeout(function(){ window.location.replace("/cocina.php"); }, 3000);
                     
                 }
