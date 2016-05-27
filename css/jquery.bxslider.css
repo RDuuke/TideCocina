@@ -422,3 +422,15 @@ a:focus {
 	top: 0;
 	z-index: 100;
 }
+p.color_titulo_registro.size_nombres.m-nombres {
+    margin-left: 8px;
+}
+.popup_captura_correo{
+	background-color: rgba(255, 255, 255, 0.74);
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 100;
+}
