@@ -24,11 +24,10 @@ class CookController
 
     function Store(){
         $flag = true;
-        $datos = array('nombre_cocina' => 'o45x19wv', 'document' => '1037628936');
         $message = array();
         $keys = array('document', 'nombre_cocina');
-        $message = Validation::Required($keys, $datos);
-        $request = (object) $datos;
+        $message = Validation::Required($keys, $_POST);
+        $request = (object) $_POST;
         $request->nombre_cocina = Image::saveImage($request->nombre_cocina);
         $user = $this->user->FindWhere('document = '.$request->document);
         if(count($message) > 0){
