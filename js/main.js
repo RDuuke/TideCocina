@@ -46,7 +46,16 @@ $(function () {
                 data: parametros_formCodigo,
             })
             .done(function(response) {
-                console.log("success");
+                if(response.status == 0 || response.status == "0"){
+                    msn = msn+response.message;
+                    funciones.mensajes(msn);
+                }else if (response.status == 1 || response.status == "1"){
+                    msn = msn+response.message;
+                    funciones.mensajes(msn);
+                    var documento = $("#cedRegistro").val();
+                    localStorage.setItem("documento", documento);
+                    window.location.replace("/cocina.php");
+                }
             });
             
         }
