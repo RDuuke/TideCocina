@@ -6,7 +6,7 @@ use src\DB\Code;
 use src\DB\User;
 use src\DB\UserCode;
 
-class CodigoController
+class CodeController
 {
     protected $code;
     protected $usercode;
@@ -26,7 +26,6 @@ class CodigoController
                 $user = new User();
                 $user = $user->FindWhere('document = ' . $request->document);
                 if ($this->usercode->Create($user->user_id, $this->code->getIdCodigo())) {
-                    $this->code->updateStatus();
                     header('Content-type: application/json; charset=utf-8');
                     echo json_encode(array('message' => 'Código registrado correctamente'));
                     return true;
