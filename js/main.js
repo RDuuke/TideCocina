@@ -49,6 +49,8 @@ $(function () {
         }
         
     });
+
+
     $(".x").click(function(event) {
         event.preventDefault();
         $(".error").fadeOut();

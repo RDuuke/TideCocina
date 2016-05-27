@@ -19,7 +19,7 @@ class CodeController
 
     public function Store()
     {
-        $datos = array('codigo' => 'o45x19wv', 'document' => '1038409053');
+        $datos = array('codigo' => 'e54q94mo', 'document' => '1037628936');
         $request = (object)$datos;
         if ($this->code->existsCode($request->codigo)) {
             if ($this->code->getStatus() == 0 || $this->code->getStatus() == '0') {

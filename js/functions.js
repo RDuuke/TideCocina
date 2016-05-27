@@ -149,7 +149,7 @@ $(function(){
         		method: 'GET',
         		url: url+'DataForm/getDepartament'
     		}).done(function (response) {
-        		//console.log(response);
+        		console.log(response);
        			for(var i = 0; i < response.length; i++){
            			departament.append('<option value="'+ response[i].departamento_id +'">'+ response[i].nombre +'</option>');
        			}

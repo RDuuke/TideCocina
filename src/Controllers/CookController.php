@@ -24,7 +24,7 @@ class CookController
 
     function Store(){
         $flag = true;
-        $datos = array('nombre_cocina' => 'o45x19wv', 'document' => '1038409053');
+        $datos = array('nombre_cocina' => 'o45x19wv', 'document' => '1037628936');
         $message = array();
         $keys = array('document', 'nombre_cocina');
         $message = Validation::Required($keys, $datos);
@@ -39,11 +39,13 @@ class CookController
         }
 
         if($flag){
-            $codes = new UserCode();
-            if($codes->Total($user->user_id) > $this->cook->Total($user->user_id)){
-                if($this->cook->Create($user->user_id, $request->nombre_cocina)){
-                    $code = new Code();
-                    $code->existsCode();
+
+            $codes = new Code();
+            $code = $codes->innerJoinWhere('codigo.codigo', 'usuario_codigo', 'usuario_codigo.codigo_id = codigo.id', 'usuario_codigo.usuario_id = ' .$user->user_id .' AND codigo.estado = 0 LIMIT 1');
+            if($code !== false){
+                if($this->cook->Create($user->user_id, $code->codigo, $request->nombre_cocina)){
+                    $codes->existsCode($code->codigo);
+                    $codes->updateStatus();
                     header('Content-type: application/json; charset=utf-8');
                     echo json_encode(array('menssage' => 'La cocina se ha guardado correctamente'));
                     return true;
