@@ -71,7 +71,7 @@ class CookController
                                         GROUP BY votaciones.cocina_id ORDER BY cocina_usuario.id ASC');
         header('Content-type: application/json; charset=utf-8');
         echo json_encode($cocina);
-    }
+    } 
 
     function Vote(){
         $message = array();
