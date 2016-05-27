@@ -114,6 +114,7 @@
 	});
 </script>
 <script>
+		var url = "http://localhost/src/App.php?f=";
 		var canvas = new fabric.Canvas('editor');
 
 
@@ -179,7 +180,20 @@
       			alert('This browser doesn\'t provide means to serialize canvas to an image');
     		}
     		else {
-    		  	window.open(canvas.toDataURL('png'));
+    			var imagen_archivo = canvas.toDataURL('png');
+    			var documento = localStorage.getItem("documento");
+    		  	$.ajax({
+			        url: url+'Cook/Store',
+			        type: 'POST',
+			        data: {
+			        	'nombre_cocina': imagen_archivo,
+			        	'document': documento
+			        },
+			    })
+			    .done(function() {
+			        console.log("success");
+			    });
+    		  	// window.open(canvas.toDataURL('png'));
     		}
   		}
 

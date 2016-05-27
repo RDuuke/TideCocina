@@ -2,6 +2,7 @@ $(function () {
     var url = "http://localhost/src/App.php?f=";
     var messages = "";
     var user_id = "";
+    var msn = "";
     funciones.Departament();
     $("#cedula").keypress(function(event) {
         if (event.keyCode >41 && event.keyCode  <58) {
@@ -46,15 +47,17 @@ $(function () {
                 data: parametros_formCodigo,
             })
             .done(function(response) {
+                console.log(response);
                 if(response.status == 0 || response.status == "0"){
                     msn = msn+response.message;
                     funciones.mensajes(msn);
-                }else if (response.status == 1 || response.status == "1"){
-                    msn = msn+response.message;
+                }else{
+                    msn = response.message;
                     funciones.mensajes(msn);
                     var documento = $("#cedRegistro").val();
                     localStorage.setItem("documento", documento);
-                    window.location.replace("/cocina.php");
+                    setTimeout(function(){ window.location.replace("/cocina.php"); }, 3000);
+                    
                 }
             });
             
@@ -137,5 +140,5 @@ $(function () {
         $("#votos").html("Votos "+ votos);
         console.log(nombre);
         $(".popup_coocina").fadeIn();
-    });
+    });    
 });
