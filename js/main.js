@@ -73,4 +73,20 @@ $(function () {
         $("#esconder").css('display', 'none');
         $("#ingresa-codigo").css('display', 'block');
     });
+    $("#salir_popup_cocina").click(function() {
+        $("#nombre_participante").html("");
+        $("#votos").html("");
+        $("#imagen_popup_galeria").html('');
+        $(".popup_coocina").fadeOut();
+    });
+    $(".abre_foto").click(function() {
+        var imagen = $(this).attr("src");
+        var nombre = $(this).attr("data-nombre");
+        var votos = $(this).attr("data-votos");
+        $("#imagen_popup_galeria").attr("src",imagen);
+        $("#nombre_participante").html(nombre);
+        $("#votos").html("Votos "+ votos);
+        console.log(nombre);
+        $(".popup_coocina").fadeIn();
+    });
 });
