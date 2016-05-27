@@ -142,7 +142,7 @@ $(function(){
 				msn="";
 				return false;
 			}else{
-				var cedRegistro = $("#cedRegistro").val();
+				var cedRegistro = $("#document").val();
 				cedRegistro.split("");
 				if (isNaN(cedRegistro)){
 					msn = msn+"<p>El campo cadula no es numerico </p> ";

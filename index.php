@@ -254,7 +254,7 @@
 							<h1 class="total text-center color-fuente ">Ingresa tú código</h1>
 							<div class="j-separator-40"></div>
 							<form action="" id="ingresaCodigo"> 
-								<input  autocomplete="off" type="text" name="document" class="campo fuente" id="cedRegistro" placeholder="Cédula">
+								<input  autocomplete="off" type="text" name="document" class="campo fuente" id="document" placeholder="Cédula">
 								<div class="j-separator-10"></div>
 								<input  autocomplete="off" type="text" name="codigo" class="campo fuente" id="codigo" placeholder="Código">
 								<input type="hidden" id="id_user">
