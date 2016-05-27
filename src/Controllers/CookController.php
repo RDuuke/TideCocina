@@ -74,22 +74,51 @@ class CookController
 
     function Vote(){
         $message = array();
+        $flag = true;
         $keys = array('cocina_id', 'user_id', 'correo_votante');
-        $message = Validation::Required($keys, $_POST);
-        $request = (object) $_POST;
-        if(! $this->user->ExistsForId($request->user_id)){
-            /*error*/
-        }
-        if(! Validation::isEmail($request->correo_votante)){
-            /*error*/
-        }
-        if(! $this->cook->ExistsForId($request->cocina_id)){
-            /*error*/
-        }
+        $campos =  array('cocina_id' => 7, 'user_id' => 1, 'correo_votante' => 'juuanduuke@gmail.com');
+        $message = Validation::Required($keys, $campos);
 
-        $rating = new Ratings();
+        $request = (object) $campos;
+        if(count($message) == 0){
+            if(! $this->user->ExistsForId($request->user_id)){
+                $flag = false;
+                echo 'id_user';
+            }
+            if(! Validation::isEmail($request->correo_votante)){
+                echo $request->correo_votante;
+                $flag = false;
+                echo 'correo';
 
+            }
+            if(! $this->cook->ExistsForId($request->cocina_id)){
+                $flag = false;
+                echo 'id_cocina';
+            }
+            if($flag){
+                $rating = new Ratings();
+                if($rating->FindWhere(" correo_votante = '".$request->correo_votante."'") === false){
+                    if($rating->Create($request->cocina_id, $request->user_id, $request->correo_votante)){
+                        header('Content-type: application/json; charset=utf-8');
+                        echo json_encode(array('message' => 'Has votado satisfactoriamente'));
+                        return true;
+                    }
 
+                }else{
+                    if($rating->Update($request->cocina_id, $request->user_id, $request->correo_votante)){
+                        header('Content-type: application/json; charset=utf-8');
+                        echo json_encode(array('message' => 'Has votado satisfactoriamente'));
+                        return true;
+                    }
+                }
+            }
+            header('Content-type: application/json; charset=utf-8');
+            echo json_encode(array('message' => 'Error al votar'));
+            return false;
+        }
+        header('Content-type: application/json; charset=utf-8');
+        echo json_encode($message);
+        return false;
     }
 
 }

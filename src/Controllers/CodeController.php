@@ -19,8 +19,7 @@ class CodeController
 
     public function Store()
     {
-        $datos = array('codigo' => 'e54q94mo', 'document' => '1037628936');
-        $request = (object)$datos;
+        $request = (object)$_POST;
         if ($this->code->existsCode($request->codigo)) {
             if ($this->code->getStatus() == 0 || $this->code->getStatus() == '0') {
                 $user = new User();
@@ -37,6 +36,7 @@ class CodeController
             header('Content-type: application/json; charset=utf-8');
             echo json_encode(array('message' => 'Error al registrar el código'));
             return false;
+            
         }
         header('Content-type: application/json; charset=utf-8');
         echo json_encode(array('message' => 'Error al registrar el código'));
