@@ -36,6 +36,7 @@ class CodeController
             header('Content-type: application/json; charset=utf-8');
             echo json_encode(array('message' => 'Error al registrar el código'));
             return false;
+            
         }
         header('Content-type: application/json; charset=utf-8');
         echo json_encode(array('message' => 'Error al registrar el código'));
