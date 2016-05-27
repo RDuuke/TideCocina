@@ -61,15 +61,17 @@ class CookController
 
     function Gallery(){
         $cocina = new UserCook();
-        $cocina = $cocina->innerJoin('cocina_usuario.id as cocina_id, 
-                                    cocina_usuario.nombre_cocina as ruta_imagen, 
-                                    usuarios.user_id as user_id, 
-                                    CONCAT(SUBSTRING_INDEX(usuarios.`names`, \' \', 1), \' \', SUBSTRING_INDEX(usuarios.lastname, \' \', 1)) as nombre_usuario',
-            'usuarios',
-            'usuarios.user_id = cocina_usuario.user_id');
+        $cocina = $cocina->innerJoinMutiple('cocina_usuario.id as cocina_id, 
+                                        cocina_usuario.nombre_cocina as ruta_imagen, 
+                                        usuarios.user_id as user_id, 
+                                        CONCAT(SUBSTRING_INDEX(usuarios.`names`, \' \', 1), \' \', SUBSTRING_INDEX(usuarios.lastname, \' \', 1)) as nombre_usuario,
+                                        count(votaciones.cocina_id) as total',
+                                        'INNER JOIN usuarios ON usuarios.user_id = cocina_usuario.user_id
+                                        INNER JOIN votaciones ON cocina_usuario.id = votaciones.cocina_id
+                                        GROUP BY votaciones.cocina_id ORDER BY cocina_usuario.id ASC');
         header('Content-type: application/json; charset=utf-8');
         echo json_encode($cocina);
-    }
+    } 
 
     function Vote(){
         $message = array();
