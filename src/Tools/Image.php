@@ -8,7 +8,7 @@ class Image
 {
     /**
      * @param $image nombre imagen en base 64 del canvas de la cocina
-     * el cual se guarda en la carpeta images/cocina
+     * el cual se guarda en la carpeta images/cocinas
      * @return string nombre de la imagen
      */
     static public function saveImage($image){
