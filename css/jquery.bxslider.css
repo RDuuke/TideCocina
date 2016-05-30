@@ -278,7 +278,7 @@ img{
 	color: #00937B;
 	font-family: 'Pacifico', cursive !important;
 }
-.error {
+.error,.error2 {
 	background-color: rgba(255, 255, 255, 0.75);
 	z-index: 5000000000;
 	position: fixed;
@@ -300,6 +300,20 @@ img{
     border: 1px solid #ccc;
     padding: 14px 40px;
     border-radius: 10px;
+}
+.ventana2 {
+    height: auto;
+    margin: 1% auto;
+    position: relative;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0px 0px 17px #ccc;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 14px 40px;
+    border-radius: 10px;
+    height: 70%;
+    overflow: auto;
 }
 .salir {
     position: absolute;

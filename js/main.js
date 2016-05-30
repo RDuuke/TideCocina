@@ -101,9 +101,10 @@ $(function () {
         }
         
     });
-
-
-
+    $(".x2").click(function(event) {
+        event.preventDefault();
+        $(".error2").fadeOut();
+    });
     $(".x").click(function(event) {
         event.preventDefault();
         $(".error").fadeOut();
@@ -151,5 +152,15 @@ $(function () {
     });
     $(".Salir_ventana_correo").click(function() {
         $("#formulario_correo").hide();
+    });
+    $(".check").click(function(event) {
+        var tipo = $(this).attr("data-id");
+            console.log(tipo);
+        if(tipo == "terminos"){
+            $(".terminos").fadeIn();
+        }
+        if (tipo == "politicas"){
+            $(".politicas").fadeIn();
+        }
     });
 });

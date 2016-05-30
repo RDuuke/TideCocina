@@ -89,7 +89,7 @@
 				<div class="slide"><a href="" class="addFondo"><img src="images/3.jpg"></a></div>
 			</div>
 			<a href="#" class="btn-accion stilea"id="removeFoto">Eliminar FOTO</a>
-			<a href="#" class="btn-accion stilea"id="rasterize">Generar imagen</a> 
+			<a href="#" class="btn-accion stilea"id="rasterize">Guardar Cocina</a> 
 		</div>
 	</div>
 </body>

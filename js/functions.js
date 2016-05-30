@@ -137,7 +137,7 @@ $(function(){
 		},
 		validaCodigo: function(){
 			if(! funciones.validacodigovacio()){ 
-				msn = msn+"<p>Todos los campos del formulario son necesarios</p>";
+				msn = msn+"<p>Todos los cámpos del formulario son necesarios</p>";
 				funciones.mensajes(msn);
 				msn="";
 				return false;
@@ -145,21 +145,21 @@ $(function(){
 				var cedRegistro = $("#document").val();
 				cedRegistro.split("");
 				if (isNaN(cedRegistro)){
-					msn = msn+"<p>El campo cadula no es numerico </p> ";
+					msn = msn+"<p>El cámpo cédula no es numerico </p> ";
 					funciones.mensajes(msn);
 					msn ="";
 					return false;
 				}else{
 					var inicio = cedRegistro[0];
 					if (inicio == 0){
-						msn = msn + "<p>La cedula no puede iniciar en " + inicio +"</p> ";
+						msn = msn + "<p>La cédula no puede iniciar en " + inicio +"</p> ";
 						funciones.mensajes(msn);
 						msn ="";
 						return false;
 
 					}
 					if (cedRegistro.length < 7) {
-						msn = msn + "<p>Los digitos de la cedula no pueden ser menores que 7 </p> ";
+						msn = msn + "<p>Los digitos de la cédula no pueden ser menores que 7 </p> ";
 						funciones.mensajes(msn);
 						msn ="";
 						return false;
@@ -168,7 +168,7 @@ $(function(){
 				var codigo = $("#codigo").val();
 				codigo.split("");
 				if (codigo.length != 8){
-					msn = msn + "<p>Reviza el codigo deve ser de 8 digitos</p> ";
+					msn = msn + "<p>Reviza el código deve ser de 8 digitos</p> ";
 					funciones.mensajes(msn);
 					return false;
 				}
