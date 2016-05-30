@@ -828,13 +828,9 @@ li{
 }
 
 /* section ==================== */
-.section{
-	padding-bottom : 2%;
-}
 
 .section-top{
 	position: relative;
-	padding-top:150px; 
 }
 
 .section-top--logo{
@@ -844,7 +840,7 @@ li{
 
 /* init ==================== */
 .init-bottom{
-	background: #FF4E08 url(../images/imagenes_tide/lineas_inferiores.png) repeat-x;
+	background: #C8D23B;
 	padding-bottom: 13px;
 	position: relative;
 	width: 100%;
@@ -868,31 +864,14 @@ li{
 		margin-top: 0;
 	}
 }
-
 .init-bottom--image{
-	margin-top: -16px;
 	position: relative;
-	width: 46%;
 }
 
-/* Media query 480 ==================== */
-@media (min-width: 480px) {
-	.init-bottom--image{
-		margin-top: -40px;
-	}
-}
-
-/* Media query 768 ==================== */
-@media (min-width: 768px) {
-	.init-bottom--image{
-		margin-top: -120px;
-	}
-}
-
-.init-box--right{
-	margin-bottom: 60px;
-	margin-top: 30px;
-	padding-bottom: 46px;
+.init-box--right {
+    margin-bottom: 60px;
+    margin-top: 160px;
+    padding-bottom: 46px;
 }
 
 .init > .container{
@@ -1457,6 +1436,34 @@ div#premio {
 #descubre{
 	background: #fff;
 }
-
-
-
+.prelativa {
+    position: relative;
+    height: 600px;
+}
+.pbsoluta {
+    position: absolute;
+    bottom: -55px;
+}
+.lacocinadetussuennos {
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+.logo_tide {
+    position: absolute;
+    right: 245px;
+    width: 175px;
+    top: -28px;
+}
+.casade_logo {
+    position: absolute;
+    right: 80px;
+    top: -38px;
+    width: 188px;
+}
+#oculto{
+	display: none;
+}
+img.total.animated.fadeInLeft.banner {
+    margin-top: 50px;
+}

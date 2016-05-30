@@ -1,4 +1,8 @@
 <?php
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', realpath(dirname(__FILE__)) . DS);
+
+
 error_reporting(E_ERROR);
 
 include 'autoload.php';

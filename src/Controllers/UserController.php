@@ -57,11 +57,11 @@ class UserController
                 foreach($_POST['products'] as $p){
                     $products->Create($user->getUserId(), $p);
                 }
-                echo json_encode(array('menssage' => 'Registro correctamente', 'user_id' => $user->getUserId()));
+                echo json_encode(array('menssage' => 'Registro correctamente', 'status' => 1));
                 return true;
             }
             header('Content-type: application/json; charset=utf-8');
-            echo json_encode(array('menssage' => 'Error a la hora de registrar el usuario'));
+            echo json_encode(array('menssage' => 'Error a la hora de registrar el usuario', 'status' => 0));
             return false;
         } else {
             header('Content-type: application/json; charset=utf-8');

@@ -26,6 +26,14 @@
 			<div class="container">
 				<div class="row">
 					<nav class="col-sm-12 col-md-12 navbar navbar-default navbar-static-top">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
 						<div class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
 								<li><a href="/">Inicio</a></li>
@@ -80,8 +88,8 @@
 				<div class="slide"><a href="" class="addFondo"><img src="images/2.jpg"></a></div>
 				<div class="slide"><a href="" class="addFondo"><img src="images/3.jpg"></a></div>
 			</div>
-			<a href="#" class="btn-accion"id="removeFoto">Eliminar FOTO</a>
-			<a href="#" class="btn-accion"id="rasterize">Generar imagen</a> 
+			<a href="#" class="btn-accion stilea"id="removeFoto">Eliminar FOTO</a>
+			<a href="#" class="btn-accion stilea"id="rasterize">Generar imagen</a> 
 		</div>
 	</div>
 </body>
@@ -106,6 +114,7 @@
 	});
 </script>
 <script>
+		var url = "http://localhost/src/App.php?f=";
 		var canvas = new fabric.Canvas('editor');
 
 
@@ -171,7 +180,19 @@
       			alert('This browser doesn\'t provide means to serialize canvas to an image');
     		}
     		else {
-    		  	window.open(canvas.toDataURL('png'));
+    			var imagen_archivo = canvas.toDataURL('png');
+    			var documento = localStorage.getItem("documento");
+    		  	$.ajax({
+			        url: url+'Cook/Store',
+			        type: 'POST',
+			        data: {
+			        	'nombre_cocina': imagen_archivo,
+			        	'document': documento
+			        },
+			    })
+			    .done(function() {
+			        console.log("success");
+			    });
     		}
   		}
 

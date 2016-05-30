@@ -82,5 +82,20 @@ abstract class Model extends Conexion
         }
         return false;
     }
+
+    public function innerJoinMutiple($select, $inner){
+        $sth = $this->conexion->query(" SELECT $select FROM $this->table $inner");
+        $count = $sth->rowCount();
+        if ($count > 1){
+            $result = $sth->fetchAll(\PDO::FETCH_OBJ);
+            return $result;
+        }else if ($count == 1) {
+            $result = $sth->fetch(\PDO::FETCH_OBJ);
+            return $result;
+        }else{
+            return false;
+        }
+
+    }
     
 }
