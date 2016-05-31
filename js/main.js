@@ -4,6 +4,7 @@ $(function () {
     var user_id = "";
     var msn = "";
     funciones.Departament();
+    funciones.galeria();
     $("#cedula").keypress(function(event) {
         if (event.keyCode >41 && event.keyCode  <58) {
             return event.returnValue = true;
@@ -100,9 +101,14 @@ $(function () {
         }
         
     });
-
-
-
+    $(".x3").click(function(event) {
+        event.preventDefault();
+        $(".error3").fadeOut();
+    });
+    $(".x2").click(function(event) {
+        event.preventDefault();
+        $(".error2").fadeOut();
+    });
     $(".x").click(function(event) {
         event.preventDefault();
         $(".error").fadeOut();
@@ -133,7 +139,7 @@ $(function () {
         $("#imagen_popup_galeria").html('');
         $(".popup_coocina").fadeOut();
     });
-    $(".abre_foto").click(function() {
+    $("div.carga_cocina_imagen").on('click','.abre_foto',function() {
         var imagen = $(this).attr("src");
         var nombre = $(this).attr("data-nombre");
         var votos = $(this).attr("data-votos");
@@ -142,5 +148,23 @@ $(function () {
         $("#votos").html("Votos "+ votos);
         console.log(nombre);
         $(".popup_coocina").fadeIn();
-    });    
+    });
+    $(".salirventana").on('click','.btn_captura_correo', function () {
+        var correo_votante = $("#id_correo_votante").val();
+        $("input#votante_campo").val(correo_votante);
+        $("#formulario_correo").hide('slow');
+    });
+    $(".Salir_ventana_correo").click(function() {
+        $("#formulario_correo").hide();
+    });
+    $(".check").click(function(event) {
+        var tipo = $(this).attr("data-id");
+            console.log(tipo);
+        if(tipo == "terminos"){
+            $(".terminos").fadeIn();
+        }
+        if (tipo == "politicas"){
+            $(".politicas").fadeIn();
+        }
+    });
 });

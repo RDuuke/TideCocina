@@ -137,7 +137,7 @@ $(function(){
 		},
 		validaCodigo: function(){
 			if(! funciones.validacodigovacio()){ 
-				msn = msn+"<p>Todos los campos del formulario son necesarios</p>";
+				msn = msn+"<p>Todos los cámpos del formulario son necesarios</p>";
 				funciones.mensajes(msn);
 				msn="";
 				return false;
@@ -145,21 +145,21 @@ $(function(){
 				var cedRegistro = $("#document").val();
 				cedRegistro.split("");
 				if (isNaN(cedRegistro)){
-					msn = msn+"<p>El campo cadula no es numerico </p> ";
+					msn = msn+"<p>El cámpo cédula no es numerico </p> ";
 					funciones.mensajes(msn);
 					msn ="";
 					return false;
 				}else{
 					var inicio = cedRegistro[0];
 					if (inicio == 0){
-						msn = msn + "<p>La cedula no puede iniciar en " + inicio +"</p> ";
+						msn = msn + "<p>La cédula no puede iniciar en " + inicio +"</p> ";
 						funciones.mensajes(msn);
 						msn ="";
 						return false;
 
 					}
 					if (cedRegistro.length < 7) {
-						msn = msn + "<p>Los digitos de la cedula no pueden ser menores que 7 </p> ";
+						msn = msn + "<p>Los digitos de la cédula no pueden ser menores que 7 </p> ";
 						funciones.mensajes(msn);
 						msn ="";
 						return false;
@@ -168,7 +168,7 @@ $(function(){
 				var codigo = $("#codigo").val();
 				codigo.split("");
 				if (codigo.length != 8){
-					msn = msn + "<p>Reviza el codigo deve ser de 8 digitos</p> ";
+					msn = msn + "<p>Reviza el código deve ser de 8 digitos</p> ";
 					funciones.mensajes(msn);
 					return false;
 				}
@@ -234,6 +234,31 @@ $(function(){
 				$('html,body').animate({scrollTop:0},'slow');
 				return false; 
 			}
+		},
+		galeria: function(){
+			var contCocinas = $(".carga_cocina_imagen");
+			$.ajax({
+				type: 'GET',
+				url: url+'Cook/Gallery',
+			}).done(function (response) {
+				console.log(response);
+				for(i in response){
+					// console.log(response[i]);
+           			contCocinas.append(
+           				'<div class="cont-cocinas-galleri">'+
+           					'<img class="abre_foto" data-nombre="'+response[i].nombre_usuario+'" data-votos="'+response[i].total+'" src="images/cocinas/'+response[i].ruta_imagen+'" alt="">'+
+           				'</div>'+
+           				'<div class="ed-container total">'+
+           					'<div class="ed-item base-100 movil-100 tablet-70 web-70 margen no-padding">'+
+           						'<p class="color_titulo_registro size_nombres m-nombres">'+response[i].nombre_usuario+'</p>'+
+           						'<span class="votos">Votos '+response[i].total+'</span>'+
+           					'</div>'+
+           					'<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">'+
+           						'<button class="btn-accion" data-id="'+response[i].cocina_id+'" data-user="'+response[i].user_id+'">Votar</button>'+
+           					'</div>'+
+           				'</div>');
+       			}
+			})			
 		}
 		
 	}

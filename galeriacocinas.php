@@ -62,89 +62,8 @@
 		<img src="images/banner_galeria.png" class="total"alt="">
 	<div class="ed-container total">
 		<div class="j-separator-40"></div>
-		<div class="ed-item base-100 movil-100 tablet-1-3 web-1-3">
-			<div class="cont-cocinas-galleri"> 
-				<img class="abre_foto" data-nombre="Johana mallama1" data-votos="120" src="images/1.jpg" alt="">
-			</div>
-			<div class="ed-container total">
-				<div class="ed-item base-100 movil-100 tablet-70 web-70 margen no-padding">
-					<p class="color_titulo_registro size_nombres">Johana mallama1</p>
-					<span class="votos">120 Votos</span>
-				</div>
-				<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">
-					<button class="btn-accion">Votar</button>
-				</div>
-			</div>
-		</div>
-		<div class="ed-item base-100 movil-100 tablet-1-3 web-1-3">
-			<div class="cont-cocinas-galleri"> 
-				<img class="abre_foto" data-nombre="Johana mallama2" data-votos="120" src="images/2.jpg" alt="">
-			</div>
-			<div class="ed-container total">
-				<div class="ed-item base-100 movil-100 tablet-70 web-70 margen no-padding">
-					<p class="color_titulo_registro size_nombres">Johana mallama2</p>
-					<span class="votos">120 Votos</span>
-				</div>
-				<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">
-					<button class="btn-accion">Votar</button>
-				</div>
-			</div>
-		</div>
-		<div class="ed-item base-100 movil-100 tablet-1-3 web-1-3">
-			<div class="cont-cocinas-galleri"> 
-				<img class="abre_foto" data-nombre="Johana mallama3" data-votos="120" src="images/3.jpg" alt="">
-			</div>
-			<div class="ed-container total">
-				<div class="ed-item base-100 movil-100 tablet-70 web-70 margen no-padding">
-					<p class="color_titulo_registro size_nombres">Johana mallama3</p>
-					<span class="votos">120 Votos</span>
-				</div>
-				<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">
-					<button class="btn-accion">Votar</button>
-				</div>
-			</div>
-		</div>
-		<div class="ed-item base-100 movil-100 tablet-1-3 web-1-3">
-			<div class="cont-cocinas-galleri"> 
-				<img class="abre_foto" data-nombre="Johana mallama4" data-votos="120" src="images/1.jpg" alt="">
-			</div>
-			<div class="ed-container total">
-				<div class="ed-item base-100 movil-100 tablet-70 web-70 margen no-padding">
-					<p class="color_titulo_registro size_nombres">Johana mallama4</p>
-					<span class="votos">120 Votos</span>
-				</div>
-				<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">
-					<button class="btn-accion">Votar</button>
-				</div>
-			</div>
-		</div>
-		<div class="ed-item base-100 movil-100 tablet-1-3 web-1-3">
-			<div class="cont-cocinas-galleri"> 
-				<img class="abre_foto" data-nombre="Johana mallama5" data-votos="120" src="images/2.jpg" alt="">
-			</div>
-			<div class="ed-container total">
-				<div class="ed-item base-100 movil-100 tablet-70 web-70 margen no-padding">
-					<p class="color_titulo_registro size_nombres">Johana mallama5</p>
-					<span class="votos">120 Votos</span>
-				</div>
-				<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">
-					<button class="btn-accion">Votar</button>
-				</div>
-			</div>
-		</div>
-		<div class="ed-item base-100 movil-100 tablet-1-3 web-1-3">
-			<div class="cont-cocinas-galleri"> 
-				<img class="abre_foto" data-nombre="Johana mallama6" data-votos="120" src="images/3.jpg" alt="">
-			</div>
-			<div class="ed-container total">
-				<div class="ed-item base-100 movil-100 tablet-70 web-70 margen no-padding">
-					<p class="color_titulo_registro size_nombres">Johana mallama6</p>
-					<span class="votos">120 Votos</span>
-				</div>
-				<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">
-					<button class="btn-accion">Votar</button>
-				</div>
-			</div>
+		<div class="ed-item base-100 movil-100 tablet-1-3 web-1-3 carga_cocina_imagen">
+			
 		</div>
 	</div>
 	<div class="popup_coocina" id="salir_popup_cocina">
@@ -164,6 +83,24 @@
 			</div>
 		</div>
 	</div>
+	<div class="popup_captura_correo" id="formulario_correo">
+		<div class="myclasspopup"> 
+			<div class="j-separator-20"></div>
+			<div class="ventana">
+				<div class="j-separator-40"></div>
+				<h1 class="total text-center color-fuente ">! Ingresa tu correo para poder votar ¡</h1>
+				<div class="j-separator-40"></div>
+				<input type="email" placeholder="Correo Votante" class="campo" id="id_correo_votante">
+				<div class="j-separator-40"></div>
+				<div class="text-center salirventana"> 
+					<button class="btn btn-danger Salir_ventana_correo">cancelar</button>
+					<button class="btn btn-success btn_captura_correo">Aceptar</button>
+				</div>
+				<div class="j-separator-40"></div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="votante_campo">
 </body>
 <script src="js/lib/jquery.min.js"></script>
 <script src="js/functions.js"></script>

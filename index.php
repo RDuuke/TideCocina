@@ -229,8 +229,8 @@
 									<hr class="blanco linea">
 									<div class="j-separator-10"></div>
 									<div class="ed-item base-100 movil-100 tablet-70 web-70">
-										<input  class="check fuente blanco tam" name="terms" id="terminos" type="checkbox" value="1"><label class="fuente blanco tam" for="" >Acepta los términos y condiciones de la actividad</label><br>
-										<input  class="check" id="politicas" name="authorization_info" type="checkbox" value="1"><label class="fuente blanco tam" for="">Acepta la política de tratamiento de datos personales de Prebel</label>
+										<input  class="check fuente blanco tam" data-id="terminos"name="terms" id="terminos" type="checkbox" value="1"><label class="fuente blanco tam" for="" >Acepta los términos y condiciones de la actividad</label><br>
+										<input  class="check" id="politicas" data-id="politicas" name="authorization_info" type="checkbox" value="1"><label class="fuente blanco tam" for="">Acepta la política de tratamiento de datos personales de Prebel</label>
 									</div>
 									<div class="ed-item base-100 movil-100 tablet-30 web-30">
 										<button class=" btn btn-fondo boton mayuscula"id="enviaform">Continuar</button>
@@ -370,7 +370,9 @@
 
 				</div>
 
-				<div class="col-md-12 box-main--image"></div>
+				<div class="ed-container total">
+					<img src="images/cocina_ppal.jpg" alt="">
+				</div>
 
 			</div>
 
@@ -863,7 +865,9 @@
 
 					</div>
 
-					<div class="col-md-12 box-main--image"></div>
+					<div class="col-md-12 box-main--image">
+						hola
+					</div>
 
 				</div>
 
@@ -947,11 +951,11 @@
 
 				<div class="row">
 
-					<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 box-main box-main--interno">
+					<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 box-main box-main--interno" id="contact">
 
 						<aside class="box-absolute">
 
-							<p class="center-block box-main--title box-main--title2">Contacto</p>
+							<p class="center-block color-fuente tam-titulo box-main--title2">Contacto</p>
 
 							<p class="box-main--content text_exito">Para dudas y comentarios puede escribirnos a:</p>
 
@@ -967,7 +971,9 @@
 
 					</div>
 
-					<div class="col-md-12 box-main--image"></div>
+					<div class="col-md-12 box-main--image">
+						<img src="images/imagenes_tide/fondo_cuidad.png" alt="" class="total">
+					</div>
 
 				</div>
 
@@ -1721,20 +1727,17 @@
 
 				<aside class="col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-6 box-prize">
 
-					<h4>El premio:</h4>
+					<h4 class="color-fuente text-center">El premio incluye:</h4>
 
-					<h6>El viaje incluye todo de la siguiente manera:</h6>
-
-					<p class="box-prize--description">•	Tiquetes ida y regreso para 2 personas a Nueva York desde cualquier ciudad del territorio colombiano</p>
-
-					<p class="box-prize--description">•	Alojamiento 4 días, 3 noches en hotel de 4 estrellas sin desayuno incluido.</p>
-
-					<p class="box-prize--description">•	Tour por la ciudad para 2 personas.</p>
-
-					<p class="box-prize--description">•	Tarjeta bono Bancolombia con $1.550.000.</p>
-
-					<p class="box-prize--description">Un solo ganador recibe este paquete todo incluido* para viajar con 1 acompañante a Nueva York</p>
-
+					<h6 class="text-center color_verde">1 de los 6</h6>
+					<h6 class="text-center color_verde">electrodomésticos para</h6>
+					<h6 class="text-center color_verde">renovar tu cocina.</h6>
+					
+					<div class="j-separator-20"></div>
+					<div class="j-separator-20"></div>
+					<p class="color_verde text-center fuente_srong">En total se entregaran 3 lavadoras <br> HE Whirlpool y 3 lavaplatos <br>eléctricos Whirlpool.</p>
+					<div class="j-separator-20"></div>
+					<div class="j-separator-20"></div>	
 					<div class="box-prize--terms"><a href="#" id="termino2" class="sube">Consulta aquí condiciones y restriciones</a></div>
 
 				</aside>
@@ -1767,6 +1770,52 @@
 				<div class="j-separator-40"></div>
 				<div class="text-center"> 
 					<button class="btn btn-success x">Aceptar</button>
+				</div>
+				<div class="j-separator-40"></div>
+			</div>
+		</div>
+		<div class="politicas error2">
+			<div class="ventana2 ed-container">
+				<div class="j-separator-40"></div>
+				<span class="salir x2">X</span>
+				<h1 class="total text-center color-fuente ">Cocina de tus sueños textos legales</h1>
+				<div class="j-separator-10"></div>
+				<articel><p class="justificado">Por la compra de cualquier producto TIDE o CASCADE entre el 1 de junio y el 15 de julio de 2016, participa por 1 de los electrodomésticos para renovar tu cocina. Raspa el collarín que viene con cada producto e ingresa el código en la página www.ganaconmytide.com, sigue las instrucciones y arma la cocina de tus sueños. Debes aceptar expresamente el tratamiento de tus datos personales, para participar. Las 6 cocinas que reciban la mayor cantidad de votos serán las ganadoras (2 de Cencosud y 4 entre las demás cadenas). La dinámica del concurso permite armar cocinas con diseños predeterminados en la página. Los participantes deberán incluir productos de las marcas TIDE y CASCADE y los electrodomésticos del concurso  dentro del diseño de sus cocinas para que esta entre en el concurso. El ganador se escogerá el día 15 de agosto de 2016. En total se entregaran 2 lavadoras HE Whirlpool y 2 lavaplatos Whirlpool entre los participantes que realicen compras en Almacenes Éxito, Carulla, consumo, Euro, La 14 u Olímpica, y 1 lavadora HE Whirlpool y 1 lavaplatos Whirlpool entre los participantes que realicen compras en  Almacenes Jumbo. Actividad válida en todos los puntos de venta Éxito, Carulla, Jumbo, Consumo, Euro, La 14 y Olímpica donde esté codificada la marca y haya material publicitario de la actividad, no aplica para Exito.com y/o Carulla.com. Indispensable conservar la factura de compra para reclamar el premio. Consulta términos y condiciones en www.ganaconmytide.com.</p></articel>
+				<div class="j-separator-40"></div>
+				<div class="text-center"> 
+					<button class="btn btn-success x2">Aceptar</button>
+				</div>
+				<div class="j-separator-40"></div>
+			</div>
+		</div>
+		<div class="terminos error2">
+			<div class="ventana2 ed-container">
+				<div class="j-separator-40"></div>
+				<span class="salir x2">X</span>
+				<h1 class="total text-center color-fuente ">!Términos y Condiciones Concurso “completa la frase para ganar”¡</h1>
+				<div class="j-separator-10"></div>
+				<articel>
+					<ul>
+						<li>1. Raspa el collarín que viene con cada producto e ingresa el código en la página www.ganaconmytide.com .</li>
+						<li>2. Sigue las instrucciones y arma la cocina de tus sueños que debe contener productos de las marcas TIDE y CASCADE y los electrodomésticos del concurso dentro del diseño.</li>
+						<li>3.	Debes aceptar expresamente el tratamiento de tus datos personales, para participar y especificar la cadena en que realizaste la compra</li>
+						<li>4.	Las 6 cocinas que reciban la mayor cantidad de votos serán las ganadoras de un electrodoméstico (2 electrodomésticos para Cencosud y 4 electrodomésticos entre las demás cadenas).</li>
+						<li>5.	Actividad valida entre el 1 de junio y el 15 de julio de 2016. El ganador se escogerá el día 15 de agosto de 2016.</li>
+						<li>6.	En total se entregaran 2 lavadoras HE Whirlpool y 2 lavaplatos Whirlpool entre los participantes que realicen compras en Almacenes Éxito, Carulla, consumo, Euro, La 14 u Olímpica, y 1 lavadora HE Whirlpool y 1 lavaplatos Whirlpool entre los participantes que realicen compras en  Almacenes Jumbo.</li>
+						<li>7.	Actividad válida en todos los puntos de venta Éxito, Carulla, Jumbo, Consumo, Euro, La 14 y Olímpica donde esté codificada la marca y haya material publicitario de la actividad, no aplica para Exito.com y/o Carulla.com.</li>
+						<li>8.	Se podrá participar tantas veces como códigos se ingresen.</li>
+						<li>9.	Los ganadores serán contactados directamente por Prebel S.A. para coordinar la entrega del premio. </li>
+						<li>10.	Para reclamar el premio es indispensable presentar factura de compra y copia de la cedula de ciudadanía del ganador. En caso de que el ganador no tenga la factura con la cual realizó la compra o no envíe la copia de su cédula de ciudadanía, perderá sus derechos sobre el premio y se escogerá la persona que le sigue en votos. </li>
+						<li>11.	El premio no podrá ser redimible en dinero, cualquier otro medio de pago o cualquier otro producto. </li>
+						<li>12.	Quedan expresamente excluidos para participar en esta actividad menores de edad y/o empleados de Prebel S.A. y/o Eficacia S.A., sus cónyuges y/o sus familiares hasta el segundo grado de consanguinidad, segundo de afinidad y único civil.</li>
+						<li>13.	Derechos de imagen: Con el hecho de participar en la promoción, los ganadores aceptan y autorizan que sus nombres e imágenes aparezcan en los programas, publicaciones y demás medios publicitarios y en general en todo material de divulgación con fines promocionales que Prebel S.A. desee hacer durante el evento o una vez finalizado el mismo, sin que ello implique la obligación de remunerarlos o compensarlos adicionalmente. Así mismo, renuncian a cualquier reclamo por derechos de imagen.  </li>
+						<li>14.	En caso de haber motivos fundados de fuerza mayor, caso fortuito, o hechos de terceros, tales como desastres naturales, guerras, huelgas o disturbios, así como también situaciones que afecten el evento; o en caso de detectarse un fraude o intento de fraude en perjuicio de los puntos de venta participantes y/o de Prebel S.A., o los participantes de la misma, y/o de Prebel S.A., podrán modificar en todo o en parte este evento, así como suspenderlo temporal o permanentemente sin asumir ninguna responsabilidad al respecto.  En estos casos, el fundamento de las medidas que se adopten, así como las pruebas que demuestren la existencia de la causa invocada por el organizador estarán a disposición de cualquier interesado.  </li>
+						<li>15.	Con la participación en esta actividad promocional autorizo a Prebel S.A. a i) Utilizar mis datos personales y/o sensibles que fueron capturados o que sean capturados por cualquier medio, con ocasión de esta actividad; y a: ii) Consultar, almacenar, corregir, actualizar, modificar o eliminar la información entregada con ocasión de este concurso, para fines comerciales, administrativos y de información. No obstante, comprendo que puedo: i) Solicitar la modificación, actualización, rectificación o eliminación de mi información de las bases de datos de Prebel S.A; ii) Solicitar prueba de la autorización; iii) Ser informado de los usos aplicados a mis datos; iv) Presentar quejas por infracciones ante la SIC; v) Revocar mi autorización y/o solicitar la supresión de mis datos y su administración, en caso de vulneración de mis derechos y garantía constitucionales y legales; vi) Acceder en forma gratuita a mis datos personales y/o datos sensibles divulgados; y vii) Salvo en los casos expresamente autorizados, exigir la confidencialidad y la reserva de la información suministrada. Los participantes podrán consultar la Política de Tratamiento de Datos Personales de Prebel S.A., en  la página web www.prebel.com.co.</li>
+					</ul>
+				</articel>
+				<div class="j-separator-40"></div>
+				<div class="text-center"> 
+					<button class="btn btn-success x2">Aceptar</button>
 				</div>
 				<div class="j-separator-40"></div>
 			</div>
