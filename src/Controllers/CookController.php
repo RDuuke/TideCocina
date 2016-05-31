@@ -28,7 +28,6 @@ class CookController
         $keys = array('document', 'nombre_cocina');
         $message = Validation::Required($keys, $_POST);
         $request = (object) $_POST;
-        $request->nombre_cocina = Image::saveImage($request->nombre_cocina);
         $user = $this->user->FindWhere('document = '.$request->document);
         if(count($message) > 0){
             $flag = false;
@@ -42,6 +41,7 @@ class CookController
             $codes = new Code();
             $code = $codes->innerJoinWhere('codigo.codigo', 'usuario_codigo', 'usuario_codigo.codigo_id = codigo.id', 'usuario_codigo.usuario_id = ' .$user->user_id .' AND codigo.estado = 0 LIMIT 1');
             if($code !== false){
+                $request->nombre_cocina = Image::saveImage($request->nombre_cocina);
                 if($this->cook->Create($user->user_id, $code->codigo, $request->nombre_cocina)){
                     $codes->existsCode($code->codigo);
                     $codes->updateStatus();
