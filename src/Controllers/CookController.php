@@ -28,7 +28,6 @@ class CookController
         $keys = array('document', 'nombre_cocina');
         $message = Validation::Required($keys, $_POST);
         $request = (object) $_POST;
-        $request->nombre_cocina = Image::saveImage($request->nombre_cocina);
         $user = $this->user->FindWhere('document = '.$request->document);
         if(count($message) > 0){
             $flag = false;
@@ -42,6 +41,7 @@ class CookController
             $codes = new Code();
             $code = $codes->innerJoinWhere('codigo.codigo', 'usuario_codigo', 'usuario_codigo.codigo_id = codigo.id', 'usuario_codigo.usuario_id = ' .$user->user_id .' AND codigo.estado = 0 LIMIT 1');
             if($code !== false){
+                $request->nombre_cocina = Image::saveImage($request->nombre_cocina);
                 if($this->cook->Create($user->user_id, $code->codigo, $request->nombre_cocina)){
                     $codes->existsCode($code->codigo);
                     $codes->updateStatus();
@@ -66,11 +66,18 @@ class CookController
                                         usuarios.user_id as user_id, 
                                         CONCAT(SUBSTRING_INDEX(usuarios.`names`, \' \', 1), \' \', SUBSTRING_INDEX(usuarios.lastname, \' \', 1)) as nombre_usuario,
                                         count(votaciones.cocina_id) as total',
+<<<<<<< HEAD
                                         'LEFT JOIN votaciones ON cocina_usuario.id = votaciones.cocina_id 
 INNER JOIN usuarios ON usuarios.user_id = cocina_usuario.user_id GROUP BY votaciones.cocina_id  ORDER BY cocina_usuario.id ASC');
+=======
+                                        'INNER JOIN usuarios ON usuarios.user_id = cocina_usuario.user_id
+                                        LEFT JOIN votaciones ON cocina_usuario.id = votaciones.cocina_id
+                                        GROUP BY votaciones.cocina_id ORDER BY cocina_usuario.id ASC');
+
+>>>>>>> aba3b113b0706cf23cfb9fc070929b6af8a8eae1
         header('Content-type: application/json; charset=utf-8');
         echo json_encode($cocina);
-    } 
+    }
 
     function Vote(){
         $message = array();
