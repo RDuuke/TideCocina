@@ -61,18 +61,26 @@ class CookController
 
     function Gallery(){
         $cocina = new UserCook();
-        $cocina = $cocina->innerJoinMutiple('cocina_usuario.id as cocina_id, 
-                                        cocina_usuario.nombre_cocina as ruta_imagen, 
-                                        usuarios.user_id as user_id, 
-                                        CONCAT(SUBSTRING_INDEX(usuarios.`names`, \' \', 1), \' \', SUBSTRING_INDEX(usuarios.lastname, \' \', 1)) as nombre_usuario,
-                                        count(votaciones.cocina_id) as total',
+        $rating = new Ratings();
 
-            'LEFT JOIN votaciones ON cocina_usuario.id = votaciones.cocina_id 
-            INNER JOIN usuarios ON usuarios.user_id = cocina_usuario.user_id GROUP BY votaciones.cocina_id  ORDER BY cocina_usuario.id ASC');
+        $cocina = $cocina->innerJoinMutiple('cocina_usuario.id as cocina_id,
+                                        cocina_usuario.nombre_cocina as ruta_imagen,
+                                        usuarios.user_id as user_id,
+                                        CONCAT(SUBSTRING_INDEX(usuarios.`names`, \' \', 1), \' \', SUBSTRING_INDEX(usuarios.lastname, \' \', 1)) as nombre_usuario',
 
+                                        'INNER JOIN usuarios ON usuarios.user_id = cocina_usuario.user_id ORDER BY cocina_usuario.id ASC');
+
+
+        foreach ($cocina as $key => $value) {
+               // $cocina->$key = array('total' => $total);
+            $total =  $rating->totalVoteForIdCook($value['cocina_id']);
+            $cocina[$key]['total'] = $total;
+
+        }
 
         header('Content-type: application/json; charset=utf-8');
         echo json_encode($cocina);
+
     }
 
     function Vote(){
@@ -97,7 +105,7 @@ class CookController
             }
             if($flag){
                 $rating = new Ratings();
-                if($rating->FindWhere(" correo_votante = '".$request->correo_votante."'") === false){
+                if($rating->FindWhere("correo_votante = '".$request->correo_votante."'") === false){
                     if($rating->Create($request->cocina_id, $request->user_id, $request->correo_votante)){
                         header('Content-type: application/json; charset=utf-8');
                         echo json_encode(array('message' => 'Has votado satisfactoriamente', 'status' => 1));

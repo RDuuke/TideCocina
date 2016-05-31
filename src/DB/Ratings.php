@@ -35,7 +35,11 @@ class Ratings extends Model
         $sth = $this->conexion->prepare(" SELECT count(*) totalVotes FROM $this->table WHERE cocina_id = :cocina_id GROUP BY ('cocina_id')");
         $sth->bindParam(':cocina_id', $cocid, \PDO::PARAM_INT);
         $sth->execute();
-        $total= $sth->fetch(\PDO::FETCH_OBJ);
-        return $total;
+        $count = $sth->rowCount();
+        if($count > 0){
+            $total= $sth->fetch(\PDO::FETCH_OBJ);
+            return $total->totalVotes;
+        }
+        return 0;
     }
 }

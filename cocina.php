@@ -16,7 +16,7 @@
 		position: relative;
 	}
 	.slide {
-    	margin-top: 0px; 
+    	margin-top: 0px;
 	}
 	</style>
 </head>
@@ -76,7 +76,7 @@
 				<div class="slide"><a href="" class="addFoto"><img id="i12" src="images/accesorios/tohallas.png"></a></div>
 				<div class="slide"><a href="" class="addFoto"><img id="i13" src="images/accesorios/utencilios.png"></a></div>
 			</div>
-			<div class="carga-cocina"> 
+			<div class="carga-cocina">
 				<canvas id="editor" width="896" height="543" style="margin:0 auto;">
 				</canvas>
 			</div>
@@ -89,14 +89,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="ed-item web-25 tablet-25 no-padding heigt"> 
+		<div class="ed-item web-25 tablet-25 no-padding heigt">
 			<div class="slider_vertical">
 				<div class="slide"><a href="" class="addFondo"><img src="images/1.jpg"></a></div>
 				<div class="slide"><a href="" class="addFondo"><img src="images/2.jpg"></a></div>
 				<div class="slide"><a href="" class="addFondo"><img src="images/3.jpg"></a></div>
 			</div>
 			<a href="#" class="btn-accion stilea"id="removeFoto">Eliminar FOTO</a>
-			<a href="#" class="btn-accion stilea btn_oculto"id="rasterize">Guardar Cocina</a> 
+			<a href="#" class="btn-accion stilea btn_oculto"id="rasterize">Guardar Cocina</a>
 		</div>
 	</div>
 	<div class="error3" id="ingresa_documento">
@@ -114,7 +114,7 @@
 					</div>
 				</articel>
 				<div class="j-separator-40"></div>
-				<div class="text-center"> 
+				<div class="text-center">
 					<button class="btn btn-success x4">Aceptar</button>
 				</div>
 				<div class="j-separator-40"></div>
@@ -149,7 +149,7 @@
 					</div>
 				</articel>
 				<div class="j-separator-40"></div>
-				<div class="text-center"> 
+				<div class="text-center">
 					<button class="btn btn-success x3">Aceptar</button>
 				</div>
 				<div class="j-separator-40"></div>
@@ -163,7 +163,7 @@
 				<div class="j-separator-10"></div>
 				<articel id="mensajes"></articel>
 				<div class="j-separator-40"></div>
-				<div class="text-center"> 
+				<div class="text-center">
 					<button class="btn btn-success x">Aceptar</button>
 				</div>
 				<div class="j-separator-40"></div>
@@ -176,7 +176,7 @@
 <script src="js/functions.js"></script>
 <script>
     	var documento = localStorage.getItem("documento");
-		var url = "http://localhost/src/App.php?f=";
+		var url = "http://localhost/tide/src/App.php?f=";
 		var canvas = new fabric.Canvas('editor');
 		var msn = "";
 	$(".slider_vertical").on('click', '.slide', function(event) {
@@ -203,7 +203,7 @@
 	    	slideWidth: 400,
 	   		minSlides: 3,
 	    	slideMargin: 10
-  		});	
+  		});
   		$('.slider_horizontal').bxSlider({
 		    slideWidth: 450,
 		    minSlides: 6,
@@ -278,7 +278,7 @@
     			var imagen_archivo = canvas.toDataURL('png');
     			if (documento == "" || documento == null){
     				$("#ingresa_documento").fadeIn();
-    			}else{ 
+    			}else{
 	    		  	$.ajax({
 				        url: url+'Cook/Store',
 				        type: 'POST',

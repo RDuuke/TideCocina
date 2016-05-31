@@ -1,5 +1,5 @@
 $(function () {
-    var url = "http://localhost/src/App.php?f=";
+    var url = "http://localhost/tide/src/App.php?f=";
     var messages = "";
     var user_id = "";
     var msn = "";
@@ -61,15 +61,15 @@ $(function () {
                     localStorage.setItem("documento", documento);
                     msn = "";
                     setTimeout(function(){ window.location.replace("/cocina.php"); }, 3000);
-                    
+
                 }
             });
-            
+
         }
     });
     $("#enviaform").click(function(event) {
         event.preventDefault();
-        if(funciones.validarForm()){ 
+        if(funciones.validarForm()){
             var parametros = $("#formulario_registro").serialize();
             $.ajax({
                 url: url+"User/store",
@@ -89,7 +89,7 @@ $(function () {
             })
             .fail(function(response) {
                 var messenger;
-                if (response.user_id != ""){ 
+                if (response.user_id != ""){
                     messages = response.menssage;
                     user_id = response.user_id;
                     for (var i = 0; i < messages.length; i++) {
@@ -100,7 +100,7 @@ $(function () {
                 console.log(response);
             });
         }
-        
+
     });
     $(".x3").click(function(event) {
         event.preventDefault();
@@ -174,7 +174,7 @@ $(function () {
         var data_user = $(this).attr('data-user');
         if (correo_votante == "" || correo_votante == null){
                 $("#formulario_correo").fadeIn();
-            }else{ 
+            }else{
                 $.ajax({
                     url: url+'Cook/Vote',
                     type: 'POST',
@@ -194,7 +194,7 @@ $(function () {
                         msn = response.message;
                         funciones.mensajes(msn);
                         msn = "";
-                        setTimeout(function(){ window.location.replace("/galeriacocinas.php"); }, 3000); 
+                        setTimeout(function(){ window.location.replace("http://localhost/tide/galeriacocinas.php"); }, 3000);
                     }
                 });
             }

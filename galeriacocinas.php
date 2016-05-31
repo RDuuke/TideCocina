@@ -21,7 +21,7 @@
 			position: relative;
 		}
 		.slide {
-	    	margin-top: 0px; 
+	    	margin-top: 0px;
 		}
 		.fondo_cocina{
 			background-attachment: fixed;
@@ -29,7 +29,7 @@
 			background-size: cover;
 		}
 		.btn-accion {
-		    background-image: url(../images/boton_votos.png) !important;
+		    background-image: url(images/boton_votos.png) !important;
 		    background-size: cover;
 		    margin: 6px 0 3px 6px;
 		    width: 97%;
@@ -45,13 +45,13 @@
 					<nav class="col-sm-12 col-md-12 navbar navbar-default navbar-static-top">
 						<div class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li><a href="/">Inicio</a></li>
-								<li><a href="/">¿Cómo participar?</a></li>
-								<li><a href="cocina.php">CREA TU COCINA</a></li>
-								<li><a href="/#productos">Nuestros <br> productos</a></li>
-								<li><a href="/#premio">Premio</a></li>
-								<li><a href="/" id="termino" class="mTop">Términos y <br>condiciones</a></li>
-								<li><a href="/#contacto" id="contacto" class="line-height">Contacto</a></li>
+								<li><a href="http://localhost/tide/">Inicio</a></li>
+								<li><a href="http://localhost/tide/">¿Cómo participar?</a></li>
+								<li><a href="http://localhost/tide/cocina.php">CREA TU COCINA</a></li>
+								<li><a href="http://localhost/tide/#productos">Nuestros <br> productos</a></li>
+								<li><a href="http://localhost/tide//#premio">Premio</a></li>
+								<li><a href="http://localhost/tide//" id="termino" class="mTop">Términos y <br>condiciones</a></li>
+								<li><a href="http://localhost/tide//#contacto" id="contacto" class="line-height">Contacto</a></li>
 							</ul>
 						</div>
 					</nav>
@@ -67,11 +67,11 @@
 		<div class="salir_popup_cocinas">
 			<span class="salir" id="salir_popup_cocina">X</span>
 		</div>
-		<div class="cont-cocinas-galleri myclasspopup"> 
+		<div class="cont-cocinas-galleri myclasspopup">
 			<img id="imagen_popup_galeria"src="" alt="">
 			<div class="j-separator-20"></div>
-			<div class="ed-container total"> 
-				<div class="ed-item base-100 movil-100 tablet-70 web-70"> 
+			<div class="ed-container total">
+				<div class="ed-item base-100 movil-100 tablet-70 web-70">
 					<p class="color_titulo_registro size_nombres" id="nombre_participante"></p>
 				</div>
 				<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">
@@ -81,7 +81,7 @@
 		</div>
 	</div>
 	<div class="popup_captura_correo" id="formulario_correo">
-		<div class="myclasspopup"> 
+		<div class="myclasspopup">
 			<div class="j-separator-20"></div>
 			<div class="ventana">
 				<div class="j-separator-40"></div>
@@ -89,7 +89,7 @@
 				<div class="j-separator-40"></div>
 				<input type="email" placeholder="Correo Votante" class="campo" id="id_correo_votante">
 				<div class="j-separator-40"></div>
-				<div class="text-center salirventana"> 
+				<div class="text-center salirventana">
 					<button class="btn btn-danger Salir_ventana_correo">cancelar</button>
 					<button class="btn btn-success btn_captura_correo">Aceptar</button>
 				</div>
@@ -106,7 +106,7 @@
 				<div class="j-separator-10"></div>
 				<articel id="mensajes"></articel>
 				<div class="j-separator-40"></div>
-				<div class="text-center"> 
+				<div class="text-center">
 					<button class="btn btn-success x">Aceptar</button>
 				</div>
 				<div class="j-separator-40"></div>

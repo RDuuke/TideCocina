@@ -3,7 +3,7 @@ define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', realpath(dirname(__FILE__)) . DS);
 
 
-error_reporting(E_ERROR);
+error_reporting(E_ALL);
 
 include 'autoload.php';
 

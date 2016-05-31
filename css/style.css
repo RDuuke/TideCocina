@@ -73,7 +73,9 @@ label{
 	    font-weight: 200 !important;
 }
 
-
+a:focus{
+	outline:none;
+}
 /*.ppal{
 	background-image: url("../images/FONDO_GENERICO.png");
 	 background-repeat: no-repeat;
@@ -93,7 +95,7 @@ label{
 
 p,.box-prize>span{
 	font-family: 'Questrial', sans-serif !important;
-}  
+}
 
 .navbar-default,.u-btn,#Ctide {
     font-family: 'HelveticaNeue-Bold' !important;
@@ -154,7 +156,7 @@ p,.box-prize>span{
 		margin-left: 5%;
 		background-color: #E51666;
 		padding: 10px 10px;
-	}	
+	}
 }*/
 
 
@@ -409,7 +411,7 @@ li{
 }
 .errores>h1
 {
-	
+
 	text-align: center;
 	font-family: 'BebasNeueBold' !important;
 	margin-top: 1% !important;
@@ -422,12 +424,12 @@ li{
 	font-weight: 200 !important;
 }
 .modal-content {
-    
-    background-color: #2D3F86 ;    
+
+    background-color: #2D3F86 ;
 }
 .modal-header {
-   
-    border-bottom: none ; 
+
+    border-bottom: none ;
     min-height: 53px;
 }
 .cerrar-negro{
@@ -533,7 +535,7 @@ li{
 	    border-color: #3D2F6A !important;
 		}
 		.navbar-toggle {
-		     margin-right: 0% !important; 
+		     margin-right: 0% !important;
 		}
 }
 @media (min-width:768px){
@@ -549,8 +551,8 @@ li{
 @media (min-width:250px) and (max-width: 570px){
 	.perfecto {
 	     margin-left: 0%;
-	     display: none; 
-	      
+	     display: none;
+
 	}
 
 	.inputCodes {
@@ -620,14 +622,14 @@ li{
 }
 
 @media (max-width: 1100px) {
-	
+
 	.menuTop{
 		margin-top: -14% !important;
 	}
 }
 
 @media (max-width: 950px) {
-	
+
 	.menuTop{
 		margin-top: -18% !important;
 	}
@@ -635,7 +637,7 @@ li{
 
 
 @media (max-width: 1000px) {
-	
+
 	.menuTop{
 		margin-top: -18% !important;
 	}
@@ -644,7 +646,7 @@ li{
 	}
 }
 @media (max-width: 767px) {
-	
+
 	.liston{
 		display: none !important;
 	}
@@ -659,14 +661,14 @@ li{
 	}*/
 }
 @media (max-width: 600px) {
-	
-	
+
+
 	.texto{
 		font-size: 7px;
 	}
 /*	.contacto{
 		font-size: 1.4em !important;
-		margin-left: 15% !important;	
+		margin-left: 15% !important;
 	}*/
 }
 
@@ -715,20 +717,20 @@ li{
 /* Media query 768p==================== */
 @media (min-width: 768px) {
 	.navbar-nav{
-		margin-left: 0px;		
+		margin-left: 0px;
 	}
 }
 
 /* Media query 992==================== */
 @media (min-width: 992px) {
 	.navbar-nav{
-		margin-left: 14px;		
+		margin-left: 14px;
 	}
 }
 /* Media query 1200==================== */
 @media (min-width: 1200px) {
 	.navbar-nav{
-		margin-left: 60px;		
+		margin-left: 60px;
 	}
 }
 
@@ -960,7 +962,7 @@ h2:before{
 h2:after{
 	content: "";
 	bottom: -20px;
-	background: #2D3F86; 
+	background: #2D3F86;
 	display: block;
 	height: 2px;
 	position: absolute;
@@ -1120,7 +1122,7 @@ h3{
 
 .image-product{
 	margin-top: 30px;
-	margin-bottom: 30px; 
+	margin-bottom: 30px;
 }
 /* Media query 480 ==================== */
 @media (min-width: 480px) {

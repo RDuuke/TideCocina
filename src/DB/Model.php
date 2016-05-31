@@ -87,15 +87,15 @@ abstract class Model extends Conexion
         $sth = $this->conexion->query(" SELECT $select FROM $this->table $inner");
         $count = $sth->rowCount();
         if ($count > 1){
-            $result = $sth->fetchAll(\PDO::FETCH_OBJ);
+            $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
             return $result;
         }else if ($count == 1) {
-            $result = $sth->fetch(\PDO::FETCH_OBJ);
+            $result = $sth->fetch(\PDO::FETCH_ASSOC);
             return $result;
         }else{
             return false;
         }
 
     }
-    
+
 }

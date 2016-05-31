@@ -1,5 +1,5 @@
 $(function(){
-	var url = "http://localhost/src/App.php?f=";
+	var url = "http://localhost/tide/src/App.php?f=";
 	var msn = "";
 	var correo_votante = "";
 	funciones = {
@@ -11,8 +11,8 @@ $(function(){
 				msn ="";
 				return false;
 			}else{
-				
-				/* Validacion de la Cedula */			
+
+				/* Validacion de la Cedula */
 				var campo_cedula = $("#cedula").val();
 				campo_cedula.split("");
 				if (isNaN(campo_cedula)){
@@ -45,7 +45,7 @@ $(function(){
 					msn ="";
 					return false;
 				}
-				
+
 				/* Validacion del Apellido */
 				var campo_apellido = $("#apellido").val();
 				if (!isNaN(campo_apellido)){
@@ -54,24 +54,24 @@ $(function(){
 					msn ="";
 					return false;
 				}
-				
+
 				/* validacion del telefono */
 				var campo_telefono = $("#telefono").val();
 				campo_telefono.split("");
 				var inicio = campo_telefono[0];
 				if (inicio == 0){
-					msn = msn+"<p>La teléfono no puede iniciar en " + inicio +" </p>";	
-					funciones.mensajes(msn);	
-					msn ="";
-					return false;
-				}
-				if (campo_telefono.length < 7) {
-					msn = msn+"<p>Los digitos de el teléfono no pueden ser menores que 7 </p>";	
+					msn = msn+"<p>La teléfono no puede iniciar en " + inicio +" </p>";
 					funciones.mensajes(msn);
 					msn ="";
 					return false;
 				}
-				
+				if (campo_telefono.length < 7) {
+					msn = msn+"<p>Los digitos de el teléfono no pueden ser menores que 7 </p>";
+					funciones.mensajes(msn);
+					msn ="";
+					return false;
+				}
+
 				/* Validacion del Email */
 				var campo_email = $("#email").val();
 				expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -97,11 +97,11 @@ $(function(){
 					return false;
 				}
 			}
-			
+
 			funciones.mensajes(msn);
 			msn ="";
 			return true;
-		
+
 		},
 		validaCheck: function(){
 			var fla = false;
@@ -137,7 +137,7 @@ $(function(){
 			//hola
 		},
 		validaCodigo: function(){
-			if(! funciones.validacodigovacio()){ 
+			if(! funciones.validacodigovacio()){
 				msn = msn+"<p>Todos los cámpos del formulario son necesarios</p>";
 				funciones.mensajes(msn);
 				msn="";
@@ -228,12 +228,12 @@ $(function(){
 				$("#oculto").css("display","block");
 				$(".banner").css('display', 'none');
 				$('html,body').animate({scrollTop:0},'slow');
-				return false; 
+				return false;
 			}else{
 				$("#oculto").css('display', 'none');
 				$(".banner").css("display","block");
 				$('html,body').animate({scrollTop:0},'slow');
-				return false; 
+				return false;
 			}
 		},
 		galeria: function(){
@@ -261,8 +261,8 @@ $(function(){
 	           				'</div>'+
            				'</div>');
        			}
-			})			
+			})
 		}
-		
+
 	}
 });
