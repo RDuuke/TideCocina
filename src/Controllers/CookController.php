@@ -69,9 +69,10 @@ class CookController
                                         'INNER JOIN usuarios ON usuarios.user_id = cocina_usuario.user_id
                                         INNER JOIN votaciones ON cocina_usuario.id = votaciones.cocina_id
                                         GROUP BY votaciones.cocina_id ORDER BY cocina_usuario.id ASC');
+
         header('Content-type: application/json; charset=utf-8');
         echo json_encode($cocina);
-    } 
+    }
 
     function Vote(){
         $message = array();
