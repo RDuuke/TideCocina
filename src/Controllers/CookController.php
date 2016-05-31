@@ -67,10 +67,10 @@ class CookController
                                         CONCAT(SUBSTRING_INDEX(usuarios.`names`, \' \', 1), \' \', SUBSTRING_INDEX(usuarios.lastname, \' \', 1)) as nombre_usuario,
                                         count(votaciones.cocina_id) as total',
 
-                                        'LEFT JOIN votaciones ON cocina_usuario.id = votaciones.cocina_id 
-INNER JOIN usuarios ON usuarios.user_id = cocina_usuario.user_id GROUP BY votaciones.cocina_id  ORDER BY cocina_usuario.id ASC');
+            'LEFT JOIN votaciones ON cocina_usuario.id = votaciones.cocina_id 
+            INNER JOIN usuarios ON usuarios.user_id = cocina_usuario.user_id GROUP BY votaciones.cocina_id  ORDER BY cocina_usuario.id ASC');
 
-                                      
+
         header('Content-type: application/json; charset=utf-8');
         echo json_encode($cocina);
     }
@@ -79,24 +79,21 @@ INNER JOIN usuarios ON usuarios.user_id = cocina_usuario.user_id GROUP BY votaci
         $message = array();
         $flag = true;
         $keys = array('cocina_id', 'user_id', 'correo_votante');
-        $campos =  array('cocina_id' => 7, 'user_id' => 1, 'correo_votante' => 'juuanduuke@gmail.com');
-        $message = Validation::Required($keys, $campos);
+        $message = Validation::Required($keys, $_POST);
 
-        $request = (object) $campos;
+        $request = (object) $_POST;
         if(count($message) == 0){
             if(! $this->user->ExistsForId($request->user_id)){
                 $flag = false;
-                echo 'id_user';
             }
             if(! Validation::isEmail($request->correo_votante)){
                 echo $request->correo_votante;
                 $flag = false;
-                echo 'correo';
 
             }
             if(! $this->cook->ExistsForId($request->cocina_id)){
                 $flag = false;
-                echo 'id_cocina';
+
             }
             if($flag){
                 $rating = new Ratings();
