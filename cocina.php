@@ -155,6 +155,20 @@
 				<div class="j-separator-40"></div>
 			</div>
 		</div>
+		<div class="error">
+			<div class="ventana">
+				<div class="j-separator-40"></div>
+				<span class="salir x">X</span>
+				<h1 class="total text-center color-fuente ">! Tide te Dice ¡</h1>
+				<div class="j-separator-10"></div>
+				<articel id="mensajes"></articel>
+				<div class="j-separator-40"></div>
+				<div class="text-center"> 
+					<button class="btn btn-success x">Aceptar</button>
+				</div>
+				<div class="j-separator-40"></div>
+			</div>
+		</div>
 </body>
 <script src="js/lib/jquery.min.js"></script>
 <script src="js/jquery.bxslider.js"></script>

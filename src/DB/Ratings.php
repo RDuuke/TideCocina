@@ -21,9 +21,9 @@ class Ratings extends Model
     }
 
     public function Update($cocid, $usid, $email){
-        $sth = $this->conexion->prepare(" UPDATE $this->table SET cocina_id = :cocina_id WHERE correo_votante = :correo_votante AND user_id = :user_id");
+        $sth = $this->conexion->prepare("UPDATE $this->table SET cocina_id = :cocina_id WHERE correo_votante = :correo_votante");
         $sth->bindParam(':cocina_id', $cocid, \PDO::PARAM_INT);
-        $sth->bindParam(':user_id', $usid, \PDO::PARAM_INT);
+        // $sth->bindParam(':user_id', $usid, \PDO::PARAM_INT);
         $sth->bindParam(':correo_votante', $email, \PDO::PARAM_STR);
         if($sth->execute()){
             return true;

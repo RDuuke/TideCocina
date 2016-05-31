@@ -179,9 +179,9 @@ $(function () {
                     url: url+'Cook/Vote',
                     type: 'POST',
                     data: {
-                        'cocina_id' = cocina_id,
-                        'data_user' = data_user,
-                        'correo_votante' = correo_votante
+                        'user_id' : data_user,
+                        'cocina_id' : cocina_id,
+                        'correo_votante' : correo_votante
                     },
                 })
                 .done(function(response) {
@@ -190,6 +190,7 @@ $(function () {
                         funciones.mensajes(msn);
                         msn = "";
                     }else{
+                        console.log(response.message);
                         msn = response.message;
                         funciones.mensajes(msn);
                         msn = "";
