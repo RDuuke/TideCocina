@@ -101,6 +101,10 @@ $(function () {
         }
         
     });
+    $(".x3").click(function(event) {
+        event.preventDefault();
+        $(".error3").fadeOut();
+    });
     $(".x2").click(function(event) {
         event.preventDefault();
         $(".error2").fadeOut();

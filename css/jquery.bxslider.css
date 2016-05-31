@@ -278,7 +278,7 @@ img{
 	color: #00937B;
 	font-family: 'Pacifico', cursive !important;
 }
-.error,.error2 {
+.error,.error2, .error3 {
 	background-color: rgba(255, 255, 255, 0.75);
 	z-index: 5000000000;
 	position: fixed;
@@ -287,6 +287,9 @@ img{
 	left: 0;
 	top: 0;
 	display: none;
+}
+.error3{
+	display: block;
 }
 .ventana {
     max-width: 400px;
@@ -314,6 +317,18 @@ img{
     border-radius: 10px;
     height: 70%;
     overflow: auto;
+}
+.ventana3{
+	height: auto;
+    margin: 1% auto;
+    position: relative;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0px 0px 17px #ccc;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 14px 40px;
+    border-radius: 10px;
 }
 .salir {
     position: absolute;
@@ -447,4 +462,10 @@ p.color_titulo_registro.size_nombres.m-nombres {
 	left: 0;
 	top: 0;
 	z-index: 100;
+}
+.no-margin{
+	margin: 0 auto;
+}
+.btn_oculto{
+	display: none;
 }

@@ -50,8 +50,15 @@
 			</div>
 		</div>
 	</div>
-		<h1 class="total text-center color-fuente">Pinta tu cocina</h1>
-		<br>
+	<div class="ed-container">
+		<div class="ed-item base-100 movil-100 tablet-75 web-75">
+			<h1 class="total text-center color-fuente">Pinta tu cocina</h1>
+		</div>
+		<div class="ed-item base-100 movil-100 tablet-25 web-25">
+			<br>
+			<a href="#" class="btn-accion stilea"id="abreinfo">Como participar</a>
+		</div>
+	</div>
 	<div class="ed-container margen-cocina">
 		<div class="ed-item web-75 tablet-75 no-padding p-relativa">
 			<div class="slider_horizontal">
@@ -89,14 +96,61 @@
 				<div class="slide"><a href="" class="addFondo"><img src="images/3.jpg"></a></div>
 			</div>
 			<a href="#" class="btn-accion stilea"id="removeFoto">Eliminar FOTO</a>
-			<a href="#" class="btn-accion stilea"id="rasterize">Guardar Cocina</a> 
+			<a href="#" class="btn-accion stilea btn_oculto"id="rasterize">Guardar Cocina</a> 
 		</div>
 	</div>
+	<div class="error3 ayuda">
+			<div class="ventana3 ed-container">
+				<div class="j-separator-40"></div>
+				<span class="salir x3">X</span>
+				<h1 class="total text-center color-fuente ">Como participar</h1>
+				<div class="j-separator-10"></div>
+				<articel>
+					<div class="ed-container total">
+						<div class="ed-item base-20 movil-20 tablet-20 web-20">
+							<h1 class="no-margin color-fuente text-center">1.</h1>
+						</div>
+						<div class="ed-item base-80 movil-80 tablet-80 web-80">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore recusandae praesentium, unde doloremque doloribus eos fugiat. Consequatur quidem, maxime, a error laborum, soluta consequuntur, tenetur ratione quia inventore assumenda in!</p>
+						</div>
+						<div class="ed-item base-20 movil-20 tablet-20 web-20">
+							<h1 class="no-margin color-fuente text-center">2.</h1>
+						</div>
+						<div class="ed-item base-80 movil-80 tablet-80 web-80">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore recusandae praesentium, unde doloremque doloribus eos fugiat. Consequatur quidem, maxime, a error laborum, soluta consequuntur, tenetur ratione quia inventore assumenda in!</p>
+						</div>
+						<div class="ed-item base-20 movil-20 tablet-20 web-20">
+							<h1 class="no-margin color-fuente text-center">3.</h1>
+						</div>
+						<div class="ed-item base-80 movil-80 tablet-80 web-80">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore recusandae praesentium, unde doloremque doloribus eos fugiat. Consequatur quidem, maxime, a error laborum, soluta consequuntur, tenetur ratione quia inventore assumenda in!</p>
+						</div>
+					</div>
+				</articel>
+				<div class="j-separator-40"></div>
+				<div class="text-center"> 
+					<button class="btn btn-success x3">Aceptar</button>
+				</div>
+				<div class="j-separator-40"></div>
+			</div>
+		</div>
 </body>
 <script src="js/lib/jquery.min.js"></script>
 <script src="js/jquery.bxslider.js"></script>
 <script src="js/bower_components/fabric.js/dist/fabric.js"></script>
 <script>
+	$(".slider_vertical").on('click', '.slide', function(event) {
+		event.preventDefault();
+		$("#rasterize").removeClass('btn_oculto');
+	});
+	$(".x3").click(function(event) {
+        event.preventDefault();
+        $(".error3").fadeOut();
+    });
+    $("#abreinfo").click(function(event) {
+    	event.preventDefault();
+        $(".error3").fadeIn();
+    });
 	$(document).ready(function(){
   		$('.slider_vertical').bxSlider({
 	    	mode: 'vertical',
