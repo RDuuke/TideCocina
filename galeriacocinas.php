@@ -59,19 +59,16 @@
 			</div>
 		</div>
 	</div>
-		<img src="images/banner_galeria.png" class="total"alt="">
-	<div class="ed-container total">
 		<div class="j-separator-40"></div>
-		<div class="ed-item base-100 movil-100 tablet-1-3 web-1-3 carga_cocina_imagen">
-			
-		</div>
+		<img src="images/banner_galeria.png" class="total"alt="">
+	<div class="ed-container total carga_cocina_imagen">
 	</div>
 	<div class="popup_coocina" id="salir_popup_cocina">
 		<div class="salir_popup_cocinas">
 			<span class="salir" id="salir_popup_cocina">X</span>
 		</div>
 		<div class="cont-cocinas-galleri myclasspopup"> 
-			<img id="imagen_popup_galeria"src="images/1.jpg" alt="">
+			<img id="imagen_popup_galeria"src="" alt="">
 			<div class="j-separator-20"></div>
 			<div class="ed-container total"> 
 				<div class="ed-item base-100 movil-100 tablet-70 web-70"> 

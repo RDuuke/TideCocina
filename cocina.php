@@ -99,6 +99,27 @@
 			<a href="#" class="btn-accion stilea btn_oculto"id="rasterize">Guardar Cocina</a> 
 		</div>
 	</div>
+	<div class="error3" id="ingresa_documento">
+		<div class="ventana3 ed-container">
+				<div class="j-separator-40"></div>
+				<span class="salir x3">X</span>
+				<h1 class="color-fuente">Ingresa tu documento</h1>
+				<div class="j-separator-10"></div>
+				<articel>
+					<div class="ed-container total">
+						<div class="ed-item total">
+							<div class="j-separator-40"></div>
+							<input type="text" class="campo" placeholder="Documento" id="doc"name="docunetmo">
+						</div>
+					</div>
+				</articel>
+				<div class="j-separator-40"></div>
+				<div class="text-center"> 
+					<button class="btn btn-success x4">Aceptar</button>
+				</div>
+				<div class="j-separator-40"></div>
+			</div>
+	</div>
 	<div class="error3 ayuda">
 			<div class="ventana3 ed-container">
 				<div class="j-separator-40"></div>
@@ -138,10 +159,21 @@
 <script src="js/lib/jquery.min.js"></script>
 <script src="js/jquery.bxslider.js"></script>
 <script src="js/bower_components/fabric.js/dist/fabric.js"></script>
+<script src="js/functions.js"></script>
 <script>
+    	var documento = localStorage.getItem("documento");
+		var url = "http://localhost/src/App.php?f=";
+		var canvas = new fabric.Canvas('editor');
+		var msn = "";
 	$(".slider_vertical").on('click', '.slide', function(event) {
 		event.preventDefault();
 		$("#rasterize").removeClass('btn_oculto');
+	});
+	$(".x4").click(function(event) {
+		event.preventDefault();
+		documento = $("#doc").val();
+		$("#ingresa_documento").fadeOut();
+		rasterize();
 	});
 	$(".x3").click(function(event) {
         event.preventDefault();
@@ -166,11 +198,6 @@
 		});
 		$(".slider_vertical").parent().addClass('myclase');
 	});
-</script>
-<script>
-		var url = "http://localhost/src/App.php?f=";
-		var canvas = new fabric.Canvas('editor');
-    	var documento = localStorage.getItem("documento");
 
 
 		$('.addFoto').on('click', function(e){
@@ -233,10 +260,9 @@
   		function rasterize(){
   			 if (!fabric.Canvas.supports('toDataURL')) {
       			alert('This browser doesn\'t provide means to serialize canvas to an image');
-    		}
-    		else {
+    		}else {
     			var imagen_archivo = canvas.toDataURL('png');
-    			if (documento == ""){
+    			if (documento == "" || documento == null){
     				$("#ingresa_documento").fadeIn();
     			}else{ 
 	    		  	$.ajax({
@@ -247,8 +273,17 @@
 				        	'document': documento
 				        },
 				    })
-				    .done(function() {
-				        console.log("success");
+				    .done(function(response) {
+				        if(response.status == 0){
+				        	msn = msn +response.menssage;
+				        	funciones.mensajes("<p>"+msn+"</p>");
+				        	msn="";
+				        }else{
+				        	msn = "<h1 class'total'>Felicitaciones!!</h1> <br /> <p>su cocina se a guardado con éxito</p>";
+                    		funciones.mensajes(msn);
+                    		msn = "";
+                    		setTimeout(function(){ window.location.replace("/galeriacocinas.php"); }, 3000);
+				        }
 				    });
     			}
     		}

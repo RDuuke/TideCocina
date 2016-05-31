@@ -245,17 +245,19 @@ $(function(){
 				for(i in response){
 					// console.log(response[i]);
            			contCocinas.append(
-           				'<div class="cont-cocinas-galleri">'+
-           					'<img class="abre_foto" data-nombre="'+response[i].nombre_usuario+'" data-votos="'+response[i].total+'" src="images/cocinas/'+response[i].ruta_imagen+'" alt="">'+
-           				'</div>'+
-           				'<div class="ed-container total">'+
-           					'<div class="ed-item base-100 movil-100 tablet-70 web-70 margen no-padding">'+
-           						'<p class="color_titulo_registro size_nombres m-nombres">'+response[i].nombre_usuario+'</p>'+
-           						'<span class="votos">Votos '+response[i].total+'</span>'+
-           					'</div>'+
-           					'<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">'+
-           						'<button class="btn-accion" data-id="'+response[i].cocina_id+'" data-user="'+response[i].user_id+'">Votar</button>'+
-           					'</div>'+
+           				'<div class="ed-item base-100 movil-100 tablet-1-3 web-1-3">'+
+	           				'<div class="cont-cocinas-galleri">'+
+	           					'<img class="abre_foto" data-nombre="'+response[i].nombre_usuario+'" data-votos="'+response[i].total+'" src="images/cocinas/'+response[i].ruta_imagen+'" alt="">'+
+	           				'</div>'+
+	           				'<div class="ed-container total">'+
+	           					'<div class="ed-item base-100 movil-100 tablet-70 web-70 margen no-padding">'+
+	           						'<p class="color_titulo_registro size_nombres m-nombres">'+response[i].nombre_usuario+'</p>'+
+	           						'<span class="votos">Votos '+response[i].total+'</span>'+
+	           					'</div>'+
+	           					'<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">'+
+	           						'<button class="btn-accion" data-id="'+response[i].cocina_id+'" data-user="'+response[i].user_id+'">Votar</button>'+
+	           					'</div>'+
+	           				'</div>'+
            				'</div>');
        			}
 			})			
