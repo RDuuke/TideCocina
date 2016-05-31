@@ -1,6 +1,7 @@
 $(function(){
 	var url = "http://localhost/src/App.php?f=";
 	var msn = "";
+	var correo_votante = "";
 	funciones = {
 		validarForm : function(){
 			/* validación general */
@@ -254,8 +255,8 @@ $(function(){
 	           						'<p class="color_titulo_registro size_nombres m-nombres">'+response[i].nombre_usuario+'</p>'+
 	           						'<span class="votos">Votos '+response[i].total+'</span>'+
 	           					'</div>'+
-	           					'<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding">'+
-	           						'<button class="btn-accion" data-id="'+response[i].cocina_id+'" data-user="'+response[i].user_id+'">Votar</button>'+
+	           					'<div class="ed-item base-100 movil-100 tablet-30 web-30 no-padding bon_votos">'+
+	           						'<button class="btn-accion btn_votar" data-id="'+response[i].cocina_id+'" data-user="'+response[i].user_id+'">Votar</button>'+
 	           					'</div>'+
 	           				'</div>'+
            				'</div>');

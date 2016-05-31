@@ -3,6 +3,7 @@ $(function () {
     var messages = "";
     var user_id = "";
     var msn = "";
+    var correo_votante = "";
     funciones.Departament();
     funciones.galeria();
     $("#cedula").keypress(function(event) {
@@ -150,7 +151,7 @@ $(function () {
         $(".popup_coocina").fadeIn();
     });
     $(".salirventana").on('click','.btn_captura_correo', function () {
-        var correo_votante = $("#id_correo_votante").val();
+        correo_votante = $("#id_correo_votante").val();
         $("input#votante_campo").val(correo_votante);
         $("#formulario_correo").hide('slow');
     });
@@ -166,5 +167,35 @@ $(function () {
         if (tipo == "politicas"){
             $(".politicas").fadeIn();
         }
+    });
+    $(".carga_cocina_imagen").on('click', '.btn_votar', function(event) {
+        event.preventDefault();
+        var cocina_id = $(this).attr('data-id');
+        var data_user = $(this).attr('data-user');
+        if (correo_votante == "" || correo_votante == null){
+                $("#formulario_correo").fadeIn();
+            }else{ 
+                $.ajax({
+                    url: url+'Cook/Vote',
+                    type: 'POST',
+                    data: {
+                        'cocina_id' = cocina_id,
+                        'data_user' = data_user,
+                        'correo_votante' = correo_votante
+                    },
+                })
+                .done(function(response) {
+                    if(response.status == 0 || response.status == "0"){
+                        msn = msn+response.message;
+                        funciones.mensajes(msn);
+                        msn = "";
+                    }else{
+                        msn = response.message;
+                        funciones.mensajes(msn);
+                        msn = "";
+                        setTimeout(function(){ window.location.replace("/galeriacocinas.php"); }, 3000); 
+                    }
+                });
+            }
     });
 });
