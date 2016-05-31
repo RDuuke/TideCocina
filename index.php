@@ -370,7 +370,9 @@
 
 				</div>
 
-				<div class="col-md-12 box-main--image"></div>
+				<div class="ed-container total">
+					<img src="images/cocina_ppal.jpg" alt="">
+				</div>
 
 			</div>
 
@@ -863,7 +865,9 @@
 
 					</div>
 
-					<div class="col-md-12 box-main--image"></div>
+					<div class="col-md-12 box-main--image">
+						hola
+					</div>
 
 				</div>
 
@@ -947,11 +951,11 @@
 
 				<div class="row">
 
-					<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 box-main box-main--interno">
+					<div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 box-main box-main--interno" id="contact">
 
 						<aside class="box-absolute">
 
-							<p class="center-block box-main--title box-main--title2">Contacto</p>
+							<p class="center-block color-fuente tam-titulo box-main--title2">Contacto</p>
 
 							<p class="box-main--content text_exito">Para dudas y comentarios puede escribirnos a:</p>
 
@@ -967,7 +971,9 @@
 
 					</div>
 
-					<div class="col-md-12 box-main--image"></div>
+					<div class="col-md-12 box-main--image">
+						<img src="images/imagenes_tide/fondo_cuidad.png" alt="" class="total">
+					</div>
 
 				</div>
 
@@ -1721,20 +1727,17 @@
 
 				<aside class="col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-6 box-prize">
 
-					<h4>El premio:</h4>
+					<h4 class="color-fuente text-center">El premio incluye:</h4>
 
-					<h6>El viaje incluye todo de la siguiente manera:</h6>
-
-					<p class="box-prize--description">•	Tiquetes ida y regreso para 2 personas a Nueva York desde cualquier ciudad del territorio colombiano</p>
-
-					<p class="box-prize--description">•	Alojamiento 4 días, 3 noches en hotel de 4 estrellas sin desayuno incluido.</p>
-
-					<p class="box-prize--description">•	Tour por la ciudad para 2 personas.</p>
-
-					<p class="box-prize--description">•	Tarjeta bono Bancolombia con $1.550.000.</p>
-
-					<p class="box-prize--description">Un solo ganador recibe este paquete todo incluido* para viajar con 1 acompañante a Nueva York</p>
-
+					<h6 class="text-center color_verde">1 de los 6</h6>
+					<h6 class="text-center color_verde">electrodomésticos para</h6>
+					<h6 class="text-center color_verde">renovar tu cocina.</h6>
+					
+					<div class="j-separator-20"></div>
+					<div class="j-separator-20"></div>
+					<p class="color_verde text-center fuente_srong">En total se entregaran 3 lavadoras <br> HE Whirlpool y 3 lavaplatos <br>eléctricos Whirlpool.</p>
+					<div class="j-separator-20"></div>
+					<div class="j-separator-20"></div>	
 					<div class="box-prize--terms"><a href="#" id="termino2" class="sube">Consulta aquí condiciones y restriciones</a></div>
 
 				</aside>

@@ -247,7 +247,10 @@ img{
 }
 .color-fuente{
 	color: #00937B;
-	font-family: 'Pacifico', cursive;
+	font-family: 'Pacifico', cursive !important;
+}
+.tam-titulo{
+	font-size: 55px;
 }
 .linea {
     width: 100%;
@@ -467,5 +470,8 @@ p.color_titulo_registro.size_nombres.m-nombres {
 	margin: 0 auto;
 }
 .btn_oculto{
+	display: none;
+}
+#ingresa_documento{
 	display: none;
 }

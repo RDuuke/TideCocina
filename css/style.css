@@ -1235,8 +1235,6 @@ h6 {
 }
 
 .box-main--image{
-	background: #fff url(../images/imagenes_tide/fondo_cuidad.png) center bottom no-repeat;
-	height: 450px;
 	margin-top: -120px;
 	padding: 0;
 	position: relative;
@@ -1466,4 +1464,18 @@ div#premio {
 }
 img.total.animated.fadeInLeft.banner {
     margin-top: 50px;
+}
+.box-main{
+	display: none;
+}
+.color_verde {
+    color: #00937B;
+    margin: 4px;
+}
+.fuente_srong{
+	font-size: 20px;
+	font-weight: bolder;
+}
+#contact{
+	display: block;
 }
